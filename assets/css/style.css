@@ -49,22 +49,6 @@ header h2 {
 header p {
   color: var(--accent-color);
 }
-
-.player-photo {
-  border-radius: 50%;
-  border: 3px solid var(--primary-color);
-  width: 360px;           /* exact width */
-  height: 360px;          /* exact height to keep it square */
-  object-fit: cover;      /* crops the image to fit without stretching */
-  display: block;
-  margin: 0 auto 20px auto;
-  transition: transform 0.3s ease;
-}
-
-.player-photo:hover {
-  transform: scale(1.05);
-}
-
 .navbar {
   position: sticky;
   top: 0;
@@ -115,6 +99,22 @@ header p {
     display: flex;
   }
 }
+
+.player-photo {
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+  width: 360px;           /* exact width */
+  height: 360px;          /* exact height to keep it square */
+  object-fit: cover;      /* crops the image to fit without stretching */
+  display: block;
+  margin: 0 auto 20px auto;
+  transition: transform 0.3s ease;
+}
+
+.player-photo:hover {
+  transform: scale(1.05);
+}
+
 
 
 /* ==============================
