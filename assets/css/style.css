@@ -50,19 +50,22 @@ header p {
   color: var(--accent-color);
 }
 
+/* Player Photo */
 .player-photo {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
   border-radius: 50%;
   border: 3px solid var(--primary-color);
-  margin-bottom: 15px;
+  max-width: 360px;  /* doubled from ~180px */
+  max-height: 360px; /* maintain square shape */
+  display: block;
+  margin: 0 auto 15px auto;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
 .player-photo:hover {
   transform: scale(1.05);
 }
+
 
 /* ==============================
    Sections
