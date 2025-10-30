@@ -50,21 +50,21 @@ header p {
   color: var(--accent-color);
 }
 
-/* Player Photo */
 .player-photo {
   border-radius: 50%;
   border: 3px solid var(--primary-color);
-  max-width: 360px;  /* doubled from ~180px */
-  max-height: 360px; /* maintain square shape */
+  width: 360px;           /* exact width */
+  height: 360px;          /* exact height to keep it square */
+  object-fit: cover;      /* crops the image to fit without stretching */
   display: block;
-  margin: 0 auto 15px auto;
-  object-fit: cover;
+  margin: 0 auto 20px auto;
   transition: transform 0.3s ease;
 }
 
 .player-photo:hover {
   transform: scale(1.05);
 }
+
 
 
 /* ==============================
