@@ -1,3 +1,11 @@
+/* Base colors */
+:root {
+  --primary-color: #4B9CD3;  /* Carolina Blue */
+  --secondary-color: #ffffff; /* White */
+  --accent-color: #002F6C;   /* Dark Blue for text & headers */
+  --card-bg: #f2f7fb;        /* Light blue card background */
+  --link-color: #0074CC;     /* Blue for links */
+}
 /* Reset */
 * {
   margin: 0;
