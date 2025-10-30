@@ -1,4 +1,6 @@
-/* Base colors */
+/* ==============================
+   Root Colors (Carolina Blue Theme)
+============================== */
 :root {
   --primary-color: #4B9CD3;  /* Carolina Blue */
   --secondary-color: #ffffff; /* White */
@@ -6,22 +8,28 @@
   --card-bg: #f2f7fb;        /* Light blue card background */
   --link-color: #0074CC;     /* Blue for links */
 }
-/* Reset */
+
+/* ==============================
+   Reset & Base Styles
+============================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 body {
-  background-color: #f2f6f8;
-  color: #1b3b6f;
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
   padding: 20px;
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
-/* Header */
+/* ==============================
+   Header
+============================== */
 header {
   text-align: center;
   margin-bottom: 30px;
@@ -29,17 +37,17 @@ header {
 
 header h1 {
   font-size: 2.5em;
-  color: #1b3b6f;
+  color: var(--primary-color);
 }
 
 header h2 {
   font-size: 1.5em;
-  color: #555;
+  color: var(--accent-color);
   margin-bottom: 10px;
 }
 
 header p {
-  color: #555;
+  color: var(--accent-color);
 }
 
 .player-photo {
@@ -47,6 +55,7 @@ header p {
   height: 150px;
   object-fit: cover;
   border-radius: 50%;
+  border: 3px solid var(--primary-color);
   margin-bottom: 15px;
   transition: transform 0.3s ease;
 }
@@ -54,96 +63,12 @@ header p {
 .player-photo:hover {
   transform: scale(1.05);
 }
-/* ===================================
-   NAVIGATION BAR + HEADER STYLING
-=================================== */
-html {
-  scroll-behavior: smooth; /* enables smooth scrolling */
-}
 
-body {
-  margin: 0;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  background-color: #ffffff;
-  color: #333;
-}
-
-/* --- NAVBAR --- */
-.navbar {
-  position: sticky;
-  top: 0;
-  background-color: #1b3b6f; /* navy blue */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 30px;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.nav-logo {
-  font-size: 1.4em;
-  color: white;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li a {
-  color: #f2f6f8;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-links li a:hover {
-  color: #e63946; /* red accent */
-}
-
-/* --- HERO SECTION --- */
-.hero {
-  text-align: center;
-  padding: 50px 20px;
-  background: linear-gradient(135deg, #f2f6f8 0%, #ffffff 100%);
-  border-bottom: 3px solid #e63946;
-}
-
-.hero .player-photo {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #1b3b6f;
-  margin-bottom: 20px;
-}
-
-.hero h1 {
-  font-size: 2.2em;
-  color: #1b3b6f;
-  margin: 0;
-}
-
-.hero h2 {
-  font-size: 1.2em;
-  color: #555;
-  margin: 10px 0;
-}
-
-.hero p {
-  color: #333;
-  font-size: 1em;
-}
-
-/* Sections */
+/* ==============================
+   Sections
+============================== */
 section {
-  background-color: #ffffff;
+  background-color: var(--secondary-color);
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 10px;
@@ -153,7 +78,8 @@ section {
 section h3 {
   margin-bottom: 15px;
   font-size: 1.5em;
-  border-bottom: 2px solid #e0e0e0;
+  color: var(--primary-color);
+  border-bottom: 2px solid #cce0f2;
   padding-bottom: 5px;
 }
 
@@ -166,7 +92,7 @@ ul li {
 }
 
 a {
-  color: #e63946;
+  color: var(--link-color);
   text-decoration: none;
 }
 
@@ -174,22 +100,29 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Collapsible */
-.collapsible {
-  background-color: #1b3b6f;
-  color: white;
+/* ==============================
+   Collapsible Stats Button
+============================== */
+button.collapsible {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   cursor: pointer;
-  padding: 10px;
+  padding: 10px 15px;
   width: 100%;
   border: none;
+  border-radius: 8px;
   text-align: left;
-  font-size: 1.1em;
-  border-radius: 5px;
+  font-size: 1rem;
   margin-bottom: 10px;
+  transition: background 0.2s ease;
 }
 
-.collapsible.active {
-  background-color: #16325a;
+button.collapsible:hover {
+  background-color: #357ABD; /* Slightly darker Carolina Blue */
+}
+
+button.collapsible.active {
+  background-color: #357ABD;
 }
 
 .content {
@@ -198,11 +131,14 @@ a:hover {
   padding-left: 10px;
 }
 
-/* Video grid */
+/* ==============================
+   Video Grid
+============================== */
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  margin-top: 15px;
 }
 
 .video-grid iframe {
@@ -211,82 +147,9 @@ a:hover {
   border-radius: 10px;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 0.9em;
-  color: #555;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2em;
-  }
-  header h2 {
-    font-size: 1.2em;
-  }
-  section h3 {
-    font-size: 1.3em;
-  }
-}
-
-/* ================================
-   REFERENCES SECTION
-=================================== */
-#references {
-  background-color: #eef4f8;  /* light blue-gray background */
-  padding: 40px 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  margin-top: 40px;
-}
-
-#references h3 {
-  text-align: center;
-  color: #1b3b6f;  /* navy blue header */
-  margin-bottom: 30px;
-  font-size: 1.8em;
-}
-
-#references .contact-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-#references .contact-card {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 20px;
-  width: 300px;
-  text-align: left;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-#references .contact-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-#references .contact-card h4 {
-  color: #1b3b6f;
-  margin-bottom: 10px;
-}
-
-#references .contact-card a {
-  color: #e63946;
-  text-decoration: none;
-}
-
-#references .contact-card a:hover {
-  text-decoration: underline;
-}
-/* Contact & References layout */
+/* ==============================
+   Info Cards (References & Contact)
+============================== */
 .info-container {
   display: flex;
   flex-wrap: wrap;
@@ -296,73 +159,6 @@ footer {
   max-width: 900px;
 }
 
-.info-card {
-  flex: 1 1 400px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.info-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
-}
-
-.info-card h3 {
-  text-align: center;
-  margin-bottom: 15px;
-  color: #222;
-}
-
-.info-card p {
-  margin: 6px 0;
-  line-height: 1.5;
-}
-
-.info-card a {
-  color: #0066cc;
-  text-decoration: none;
-}
-
-.info-card a:hover {
-  text-decoration: underline;
-}
-
-/* Body & Headers */
-body {
-  background-color: var(--secondary-color);
-  color: var(--accent-color);
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.6;
-}
-
-h1, h2, h3 {
-  color: var(--primary-color);
-}
-
-/* Links */
-a {
-  color: var(--link-color);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Player Photo */
-.player-photo {
-  border-radius: 50%;
-  border: 3px solid var(--primary-color);
-  max-width: 180px;
-  display: block;
-  margin: 0 auto 15px auto;
-}
-
-/* Info Cards (References & Contact) */
 .info-card {
   flex: 1 1 400px;
   background-color: var(--card-bg);
@@ -396,40 +192,9 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Collapsible Stats Button */
-button.collapsible {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  cursor: pointer;
-  padding: 10px 15px;
-  width: 100%;
-  border: none;
-  border-radius: 8px;
-  text-align: left;
-  font-size: 1rem;
-  margin-bottom: 10px;
-  transition: background 0.2s ease;
-}
-
-button.collapsible:hover {
-  background-color: #357ABD; /* Darker Carolina blue */
-}
-
-/* Video Grid */
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin-top: 15px;
-}
-
-.video-grid iframe {
-  width: 100%;
-  height: 200px;
-  border-radius: 10px;
-}
-
-/* Footer */
+/* ==============================
+   Footer
+============================== */
 footer {
   background-color: var(--primary-color);
   color: var(--secondary-color);
@@ -438,3 +203,19 @@ footer {
   margin-top: 40px;
   font-size: 0.9rem;
 }
+
+/* ==============================
+   Responsive
+============================== */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2em;
+  }
+  header h2 {
+    font-size: 1.2em;
+  }
+  section h3 {
+    font-size: 1.3em;
+  }
+}
+
