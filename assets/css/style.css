@@ -219,3 +219,16 @@ footer {
   }
 }
 
+/* Alternating Section Backgrounds */
+section:nth-of-type(odd) {
+  background-color: var(--card-bg); /* Light blue */
+}
+
+section:nth-of-type(even) {
+  background-color: #e6f0fb; /* Slightly darker Carolina Blue tint */
+}
+
+/* Ensure Player Metrics section stands out a little */
+#metrics {
+  background-color: #d7ebfb;
+}
