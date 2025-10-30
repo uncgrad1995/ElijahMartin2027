@@ -138,3 +138,57 @@ footer {
   }
 }
 
+/* ================================
+   REFERENCES SECTION
+=================================== */
+#references {
+  background-color: #eef4f8;  /* light blue-gray background */
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  margin-top: 40px;
+}
+
+#references h3 {
+  text-align: center;
+  color: #1b3b6f;  /* navy blue header */
+  margin-bottom: 30px;
+  font-size: 1.8em;
+}
+
+#references .contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+#references .contact-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#references .contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#references .contact-card h4 {
+  color: #1b3b6f;
+  margin-bottom: 10px;
+}
+
+#references .contact-card a {
+  color: #e63946;
+  text-decoration: none;
+}
+
+#references .contact-card a:hover {
+  text-decoration: underline;
+}
