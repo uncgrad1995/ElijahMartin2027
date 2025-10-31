@@ -99,20 +99,30 @@ header p {
     display: flex;
   }
 }
+.hero {
+  text-align: center;           /* centers everything inside */
+  padding: 40px 20px;
+  background: #e6f0fa;          /* subtle Carolina Blue background */
+}
 
 .player-photo {
-  border-radius: 50%;
-  border: 3px solid var(--primary-color);
-  width: 360px;           /* exact width */
-  height: 360px;          /* exact height to keep it square */
-  object-fit: cover;      /* crops the image to fit without stretching */
-  display: block;
-  margin: 0 auto 20px auto;
-  transition: transform 0.3s ease;
+  width: 300px;                 /* adjust size if needed */
+  height: auto;
+  border-radius: 10px;          /* change to 0 for square corners */
+  object-fit: cover;
+  margin: 0 auto 20px auto;     /* centers the image */
+  display: block;               /* ensures margin auto works */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* optional depth */
+  max-width: 90%;               /* keeps it from overflowing small screens */
 }
 
 .player-photo:hover {
   transform: scale(1.05);
+}
+@media (max-width: 600px) {
+  .player-photo {
+    width: 80%;
+  }
 }
 
 
