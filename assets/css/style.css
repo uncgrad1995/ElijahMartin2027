@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 /* ==============================
    Root Colors (Carolina Blue Theme)
 ============================== */
@@ -16,8 +18,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
+
 
 body {
   background-color: var(--secondary-color);
@@ -26,6 +29,7 @@ body {
   line-height: 1.6;
   scroll-behavior: smooth;
 }
+
 
 /* ==============================
    Header
@@ -144,6 +148,17 @@ section h3 {
   color: var(--primary-color);
   border-bottom: 2px solid #cce0f2;
   padding-bottom: 5px;
+}
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 0.5px;
+}
+
+p, li, a {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
 }
 
 ul {
