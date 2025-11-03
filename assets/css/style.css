@@ -64,24 +64,24 @@ body {
 ========================== */
 .hero {
   text-align: center;
-  padding: 40px 20px 20px; /* was probably larger before */
+  padding: 20px 20px 10px;  /* trimmed down vertical padding */
   margin-top: 0;
 }
 
-.hero h1, .hero h2, .hero p {
-  margin: 5px 0;
-}
 
 
 .player-photo {
-  width: 250px;               /* keep the width consistent */
-  height: 300px;              /* reduce height to 75% of previous, or adjust as needed */
-  object-fit: cover;          /* keeps proportions but fills box */
-  object-position: center top; /* move focus upward so head stays in frame */
-  border-radius: 50%;
-  border: 4px solid #4B9CD3;  /* Carolina blue */
-  margin-top: 20px;
+  width: 250px;              /* keeps consistent width */
+  height: auto;              /* keeps natural proportions */
+  max-height: 350px;         /* prevents it from getting too tall */
+  object-fit: contain;       /* shows full image without cropping */
+  object-position: center top;
+  border-radius: 12px;       /* rounded rectangle, not a circle */
+  border: 4px solid #4B9CD3; /* Carolina blue border */
+  margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* nice subtle depth */
 }
+
 
 
 .hero h1 {
