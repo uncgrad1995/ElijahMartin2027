@@ -21,7 +21,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-
 body {
   background-color: var(--secondary-color);
   color: var(--accent-color);
@@ -30,33 +29,13 @@ body {
   scroll-behavior: smooth;
 }
 
-
 /* ==============================
-   Header
+   Navbar
 ============================== */
-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-header h1 {
-  font-size: 2.5em;
-  color: var(--primary-color);
-}
-
-header h2 {
-  font-size: 1.5em;
-  color: var(--accent-color);
-  margin-bottom: 10px;
-}
-
-header p {
-  color: var(--accent-color);
-}
 .navbar {
   position: sticky;
   top: 0;
-  background-color: #1b3b6f;  /* navy */
+  background-color: #1b3b6f;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -85,64 +64,42 @@ header p {
 }
 
 .nav-links li a:hover {
-  color: #e63946; /* red accent on hover */
+  color: #e63946;
 }
 
-/* Make nav responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    background-color: #1b3b6f;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 200px;
-    display: none; /* hidden by default, can add JS toggle */
-  }
-  .nav-links.show {
-    display: flex;
-  }
-}
+/* ==============================
+   Hero Section
+============================== */
 .hero {
-  text-align: center;           /* centers everything inside */
+  text-align: center;
   padding: 40px 20px;
-  background: #e6f0fa;          /* subtle Carolina Blue background */
+  background: #e6f0fa;
 }
+
 .player-photo {
-  width: 300px;               /* fixed width */
-  height: 225px;              /* 75% of width for 4:3 ratio */
-  border-radius: 10px;        /* rounded corners */
-  object-fit: cover;          /* fills the box */
-  object-position: top center;/* keeps the top of the image visible */
-  margin: 0 auto 20px auto;   /* centers the image */
+  width: 300px;
+  height: 225px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: top center;
+  margin: 0 auto 20px auto;
   display: block;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  max-width: 90%;             /* responsive for small screens */
-}
-
-@media (max-width: 600px) {
-  .player-photo {
-    width: 80%;               /* responsive width on smaller screens */
-    height: auto;             /* automatic height to maintain aspect ratio */
-    object-fit: contain;      /* avoids cropping on very small screens */
-  }
-}
-
-}
-
-.player-photo:hover {
-  transform: scale(1.05);     /* optional hover effect */
+  max-width: 90%;
   transition: transform 0.3s ease;
 }
 
-@media (max-width: 600px) {
-  .player-photo {
-    width: 80%;               /* responsive width on smaller screens */
-    height: auto;             /* maintain aspect ratio automaticall*
-
+.player-photo:hover {
+  transform: scale(1.05);
 }
 
-
+@media (max-width: 600px) {
+  .player-photo {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+  }
+}
 
 /* ==============================
    Sections
@@ -162,24 +119,16 @@ section h3 {
   border-bottom: 2px solid #cce0f2;
   padding-bottom: 5px;
 }
+
 h1, h2, h3 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   color: var(--primary-color);
-  letter-spacing: 0.5px;
 }
 
 p, li, a {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-}
-
-ul {
-  list-style-type: none;
-}
-
-ul li {
-  margin-bottom: 10px;
 }
 
 a {
@@ -192,88 +141,50 @@ a:hover {
 }
 
 /* ==============================
-   Collapsible Stats Button
-============================== */
-button.collapsible {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  cursor: pointer;
-  padding: 10px 15px;
-  width: 100%;
-  border: none;
-  border-radius: 8px;
-  text-align: left;
-  font-size: 1rem;
-  margin-bottom: 10px;
-  transition: background 0.2s ease;
-}
-
-button.collapsible:hover {
-  background-color: #357ABD; /* Slightly darker Carolina Blue */
-}
-
-button.collapsible.active {
-  background-color: #357ABD;
-}
-
-.content {
-  display: none;
-  overflow: hidden;
-  padding-left: 10px;
-}
-
-/* ==============================
    Video Grid
 ============================== */
 #videos {
-  margin-top: 40px;
-  margin-bottom: 60px;
-}
-
-/* --- Video Section Styling --- */
-#videos {
   text-align: center;
   padding: 40px 0;
+  margin-bottom: 40px;
 }
 
-#videos h3 {
-  margin-bottom: 25px;
-  color: #007fff; /* Carolina Blue accent */
-}
-
-/* ==============================
-   Video Grid - Responsive Update
-============================== */
 .video-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 25px;
   justify-items: center;
-  align-items: start;
 }
 
 .video-item {
   width: 100%;
-  max-width: 320px; /* ensures 3 per row */
+  max-width: 360px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .video-item iframe,
-.video-item video,
-.video-item .twitter-container {
+.video-item video {
   width: 100%;
   aspect-ratio: 16/9;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* Twitter embed matches other videos */
-.video-item.twitter-container {
-  max-width: 320px;
+.video-caption {
+  margin-top: 8px;
+  font-size: 0.95em;
+  color: var(--accent-color);
 }
 
-/* Responsive Adjustments */
+/* Twitter videos same layout */
+.twitter-container {
+  width: 100%;
+  max-width: 360px;
+}
+
+/* Responsive */
 @media (max-width: 992px) {
   .video-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -284,9 +195,7 @@ button.collapsible.active {
   .video-grid {
     grid-template-columns: 1fr;
   }
-
 }
-
 
 /* ==============================
    Info Cards (References & Contact)
@@ -325,14 +234,6 @@ button.collapsible.active {
   margin: 6px 0;
 }
 
-.info-card a {
-  color: var(--link-color);
-}
-
-.info-card a:hover {
-  text-decoration: underline;
-}
-
 /* ==============================
    Footer
 ============================== */
@@ -345,41 +246,16 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ==============================
-   Responsive
-============================== */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2em;
-  }
-  header h2 {
-    font-size: 1.2em;
-  }
-  section h3 {
-    font-size: 1.3em;
-  }
-}
-
 /* Alternating Section Backgrounds */
 section:nth-of-type(odd) {
-  background-color: var(--card-bg); /* Light blue */
+  background-color: var(--card-bg);
 }
 
 section:nth-of-type(even) {
-  background-color: #e6f0fb; /* Slightly darker Carolina Blue tint */
+  background-color: #e6f0fb;
 }
 
-/* Ensure Player Metrics section stands out a little */
+/* Highlight Metrics Section */
 #metrics {
   background-color: #d7ebfb;
-}
-.twitter-container {
-  width: 100%;
-  max-width: 480px;
-  margin: 0 auto;
-}
-
-.twitter-tweet {
-  margin: 0 auto !important;
-  width: 100% !important;
 }
