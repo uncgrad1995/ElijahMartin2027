@@ -220,32 +220,41 @@ button.collapsible.active {
 /* --- Video Section Styling --- */
 #videos {
   text-align: center;
-  padding: 60px 20px;
-  background-color: #fafafa;
+  padding: 40px 0;
 }
 
 #videos h3 {
-  font-size: 1.8rem;
-  margin-bottom: 30px;
-  font-weight: 700;
+  margin-bottom: 25px;
+  color: #007fff; /* Carolina Blue accent */
 }
+
 
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 25px;
+  gap: 20px;
   justify-items: center;
   align-items: start;
+  margin-top: 20px;
 }
 
+
 .video-grid iframe,
-.video-grid video {
+.video-grid video,
+.video-grid .twitter-container {
   width: 100%;
   max-width: 480px;
   aspect-ratio: 16 / 9;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  background-color: #000;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.video-grid iframe,
+.video-grid video {
+  height: auto;
+}
+
 }
 
 /* Optional: Add some hover effect for polish */
