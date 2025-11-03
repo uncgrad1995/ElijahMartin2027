@@ -108,25 +108,27 @@ header p {
   padding: 40px 20px;
   background: #e6f0fa;          /* subtle Carolina Blue background */
 }
-
 .player-photo {
-  width: 300px;                 /* adjust size if needed */
-  height: auto;
-  border-radius: 10px;          /* change to 0 for square corners */
-  object-fit: cover;
-  margin: 0 auto 20px auto;     /* centers the image */
-  display: block;               /* ensures margin auto works */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* optional depth */
-  max-width: 90%;               /* keeps it from overflowing small screens */
+  width: 300px;               /* fixed width */
+  aspect-ratio: 4 / 3;        /* width:height = 4:3 (75% height) */
+  border-radius: 10px;        /* rounded corners, set to 0 if you want square */
+  object-fit: cover;          /* ensures image fills the box without distortion */
+  margin: 0 auto 20px auto;   /* centers the image */
+  display: block;             /* ensures margin auto works */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* optional depth/shadow */
+  max-width: 90%;             /* keeps it from overflowing small screens */
 }
 
 .player-photo:hover {
-  transform: scale(1.05);
+  transform: scale(1.05);     /* optional hover effect */
+  transition: transform 0.3s ease;
 }
+
 @media (max-width: 600px) {
   .player-photo {
-    width: 80%;
-  }
+    width: 80%;               /* responsive width on smaller screens */
+    height: auto;             /* maintain aspect ratio automaticall*
+
 }
 
 
