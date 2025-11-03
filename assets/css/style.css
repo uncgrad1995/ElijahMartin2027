@@ -246,43 +246,45 @@ button.collapsible.active {
 ============================== */
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 per row on large screens */
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   justify-items: center;
   align-items: start;
-  margin-top: 20px;
 }
 
 .video-item {
   width: 100%;
-  max-width: 320px;   /* controls size */
+  max-width: 320px; /* ensures 3 per row */
+  display: flex;
+  flex-direction: column;
 }
 
 .video-item iframe,
 .video-item video,
 .video-item .twitter-container {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16/9;
   border-radius: 12px;
-  overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Twitter embed matches other videos */
+.video-item.twitter-container {
+  max-width: 320px;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 992px) {
   .video-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablet */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
   .video-grid {
-    grid-template-columns: 1fr; /* 1 per row on mobile */
+    grid-template-columns: 1fr;
   }
-  .video-item iframe,
-  .video-item video {
-    max-width: 100%;
-  }
+
 }
 
 
