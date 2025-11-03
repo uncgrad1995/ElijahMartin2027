@@ -64,19 +64,25 @@ body {
 ========================== */
 .hero {
   text-align: center;
-  background-color: var(--light-blue);
-  padding: 50px 20px;
+  padding: 40px 20px 20px; /* was probably larger before */
+  margin-top: 0;
 }
 
-.player-photo {
-  width: 280px;
-  height: 210px;
-  border-radius: 12px;
-  object-fit: cover;
-  object-position: top center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-  margin-bottom: 20px;
+.hero h1, .hero h2, .hero p {
+  margin: 5px 0;
 }
+
+
+.player-photo {
+  width: 250px;               /* keep the width consistent */
+  height: 300px;              /* reduce height to 75% of previous, or adjust as needed */
+  object-fit: cover;          /* keeps proportions but fills box */
+  object-position: center top; /* move focus upward so head stays in frame */
+  border-radius: 50%;
+  border: 4px solid #4B9CD3;  /* Carolina blue */
+  margin-top: 20px;
+}
+
 
 .hero h1 {
   color: var(--carolina-blue);
