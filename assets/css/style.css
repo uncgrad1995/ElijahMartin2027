@@ -228,34 +228,39 @@ button.collapsible.active {
   color: #007fff; /* Carolina Blue accent */
 }
 
-
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
+  gap: 25px; /* slightly larger gap between videos */
   justify-items: center;
   align-items: start;
   margin-top: 20px;
 }
 
-
 .video-grid iframe,
 .video-grid video,
 .video-grid .twitter-container {
   width: 100%;
-  max-width: 480px;
-  aspect-ratio: 16 / 9;
+  max-width: 480px; /* keeps all videos uniform */
+  aspect-ratio: 16/9;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-.video-grid iframe,
-.video-grid video {
+.video-grid video,
+.video-grid iframe {
+  display: block;       /* ensures proper spacing */
+  margin: 0 auto;       /* centers each video */
   height: auto;
 }
 
+.video-grid video:hover,
+.video-grid iframe:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
 }
+
 
 /* Optional: Add some hover effect for polish */
 .video-grid video:hover,
