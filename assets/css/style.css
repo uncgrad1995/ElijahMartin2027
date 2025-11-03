@@ -110,13 +110,24 @@ header p {
 }
 .player-photo {
   width: 300px;               /* fixed width */
-  aspect-ratio: 4 / 3;        /* width:height = 4:3 (75% height) */
-  border-radius: 10px;        /* rounded corners, set to 0 if you want square */
-  object-fit: cover;          /* ensures image fills the box without distortion */
+  height: 225px;              /* 75% of width for 4:3 ratio */
+  border-radius: 10px;        /* rounded corners */
+  object-fit: cover;          /* fills the box */
+  object-position: top center;/* keeps the top of the image visible */
   margin: 0 auto 20px auto;   /* centers the image */
-  display: block;             /* ensures margin auto works */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* optional depth/shadow */
-  max-width: 90%;             /* keeps it from overflowing small screens */
+  display: block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 90%;             /* responsive for small screens */
+}
+
+@media (max-width: 600px) {
+  .player-photo {
+    width: 80%;               /* responsive width on smaller screens */
+    height: auto;             /* automatic height to maintain aspect ratio */
+    object-fit: contain;      /* avoids cropping on very small screens */
+  }
+}
+
 }
 
 .player-photo:hover {
