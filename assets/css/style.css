@@ -340,3 +340,13 @@ section:nth-of-type(even) {
 #metrics {
   background-color: #d7ebfb;
 }
+.twitter-container {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.twitter-tweet {
+  margin: 0 auto !important;
+  width: 100% !important;
+}
