@@ -71,9 +71,9 @@ body {
 
 
 .player-photo {
-  width: 250px;              /* keeps consistent width */
+  width: 300px;              /* keeps consistent width */
   height: auto;              /* keeps natural proportions */
-  max-height: 350px;         /* prevents it from getting too tall */
+  max-height: 300px;         /* prevents it from getting too tall */
   object-fit: contain;       /* shows full image without cropping */
   object-position: center top;
   border-radius: 12px;       /* rounded rectangle, not a circle */
