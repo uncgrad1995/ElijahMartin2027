@@ -109,7 +109,7 @@ header p {
   background: #e6f0fa;          /* subtle Carolina Blue background */
 }
 .player-photo {
-  width: 240px;               /* fixed width */
+  width: 300px;               /* fixed width */
   aspect-ratio: 4 / 3;        /* width:height = 4:3 (75% height) */
   border-radius: 10px;        /* rounded corners, set to 0 if you want square */
   object-fit: cover;          /* ensures image fills the box without distortion */
