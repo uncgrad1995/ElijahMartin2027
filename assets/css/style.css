@@ -235,39 +235,34 @@ button.collapsible.active {
 ============================== */
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 per row on large screens */
+  gap: 20px;       /* spacing between videos */
   justify-items: center;
   align-items: start;
   margin-top: 20px;
 }
 
-.video-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.video-grid iframe,
+.video-grid video,
+.video-grid .twitter-container {
   width: 100%;
-}
-
-.video-item iframe,
-.video-item video {
-  width: 100%;
-  max-width: 480px;
-  aspect-ratio: 16 / 9;
+  max-width: 320px;   /* control video size */
+  aspect-ratio: 16 / 9;  /* keeps proper height */
   border-radius: 12px;
+  overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  object-fit: cover;
 }
 
-.video-item .video-caption {
-  margin-top: 8px;
+.video-caption {
+  margin-top: 5px;
   font-size: 0.9rem;
   color: var(--accent-color);
   text-align: center;
 }
 
-.video-item iframe:hover,
-.video-item video:hover {
+/* Optional: hover effect */
+.video-grid iframe:hover,
+.video-grid video:hover {
   transform: scale(1.02);
   transition: transform 0.3s ease;
 }
