@@ -212,13 +212,47 @@ button.collapsible.active {
 /* ==============================
    Video Grid
 ============================== */
+#videos {
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+/* --- Video Section Styling --- */
+#videos {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fafafa;
+}
+
+#videos h3 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  justify-items: center;
+  align-items: start;
+}
+
+.video-grid iframe,
 .video-grid video {
   width: 100%;
-  height: 200px;
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 480px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: #000;
+}
 
+/* Optional: Add some hover effect for polish */
+.video-grid video:hover,
+.video-grid iframe:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
 }
 
 /* ==============================
