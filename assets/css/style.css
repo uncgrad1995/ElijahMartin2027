@@ -185,7 +185,7 @@ body {
    SECTION STYLES
 ========================== */
 section {
-  padding: 30px 40px;
+  padding: 30px 60px; /* more space left and right */
   margin: 25px auto;
   max-width: 1000px;
   background: var(--white);
