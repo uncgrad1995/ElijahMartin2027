@@ -85,7 +85,7 @@ body {
 }
 
 .player-photo {
-  width: 280px;          /* main image width */
+  width: 420px;          /* main image width */
   height: 420px;          /* maintain ratio */
   border-radius: 10px;
   object-fit: contain;
@@ -100,7 +100,7 @@ body {
 }
 
 .extra-photo {
-  width: 280px;               /* same width as profile photo */
+  width: 420px;               /* same width as profile photo */
   height: 210px;                /* each half the height visually */
   aspect-ratio: 1 / 1.6;      /* maintain good shape */
   border-radius: 10px;
