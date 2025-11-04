@@ -72,58 +72,79 @@ body {
 }
 
 /* ==========================
-   HERO SECTION
+   HERO SECTION REFINED
 ========================== */
 .hero {
   display: flex;
   align-items: flex-start; /* aligns top of text with top of photo */
-  gap: 30px;               /* space between photo and text */
-  padding: 20px 20px 30px 20px;
-  background: #e6f0fa;     /* subtle Carolina Blue */
+  gap: 40px;               /* more space between photo and text */
+  padding: 20px 40px 30px 40px; /* top/right/bottom/left */
+  background: var(--light-blue);
 }
 
 .player-photo {
-  width: 280px;          /* keeps image reasonable size */
+  width: 280px;          /* fixed width */
   height: auto;          /* maintain aspect ratio */
   border-radius: 10px;
-  object-fit: contain;   /* ensures full image is visible, no cropping */
+  object-fit: contain;   /* keeps entire image visible */
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .hero-text {
   display: flex;
   flex-direction: column;
+  max-width: 600px;     /* keeps text from stretching too far */
 }
-
-.hero-text ul {
-  list-style-type: disc;   /* bullet points */
-  padding-left: 20px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-}
-
-.hero-text h3 {
-  margin-top: 15px;
-  margin-bottom: 5px;
-  color: var(--primary-color);
-}
-
 
 .hero-text h1 {
-  color: #13294B;                  /* Carolina navy */
+  color: var(--navy);
   font-size: 2.3em;
   margin-bottom: 0.2em;
 }
 
 .hero-text h2 {
-  color: #ffffff;                  /* white for contrast */
+  color: var(--navy);
   font-size: 1.3em;
-  margin: 0.3em 0;
+  margin: 0.1em 0;
+  font-weight: 500;
 }
 
-.hero-text p {
-  color: #0a1f33;                  /* deep navy for text readability */
-  font-size: 1.1em;
+.hero-text h3 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: var(--carolina-blue);
+}
+
+.hero-text ul {
+  list-style-type: disc;  /* standard bullets */
+  padding-left: 20px;
+  margin: 5px 0 10px 0;
+}
+
+.hero-text ul li {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #0a1f33;
+}
+
+/* ==========================
+   RESPONSIVE HERO
+========================== */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text ul {
+    padding-left: 0;
+    list-style-position: inside;
+  }
 }
 
 
