@@ -87,7 +87,7 @@ body {
 /* Main profile image (left) */
 .player-photo {
   width: 420px;
-  height: 600px;
+  height: 680px;
   border-radius: 10px;
   object-fit: cover;
   object-position: center;
