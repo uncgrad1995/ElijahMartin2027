@@ -200,30 +200,31 @@ section h3 {
   margin-bottom: 20px;
   font-size: 1.5em;
 }
-/* Metrics section headings (currently using <u>) */
-#metrics ul li u {
-  text-decoration: none;         /* remove default underline */
-  font-weight: 700;              /* bold */
-  font-size: 1.1em;              /* slightly larger */
-  color: var(--carolina-blue);   /* pop color */
-  display: block;                /* ensures it takes a full line */
-  margin: 20px 0 10px 0;         /* spacing above and below */
-  border-bottom: 2px solid var(--carolina-blue); /* optional underline effect */
-  padding-bottom: 3px;           /* spacing from border */
-}
-
-/* Remove bullets for all list items in metrics */
+/* Remove bullets for all metrics list items */
 #metrics ul {
   list-style: none;
   padding-left: 0;
+  margin: 0;
 }
 
-/* Add spacing between regular stats items */
-#metrics ul li:not(:has(u)) {
+/* Metrics headings */
+.metrics-heading {
+  font-weight: 700;
+  font-size: 1.15em;
+  color: var(--carolina-blue);
+  margin: 20px 0 10px 0;
+  border-bottom: 2px solid var(--carolina-blue);
+  padding-bottom: 4px;
+  display: block;
+}
+
+/* Regular stats items */
+#metrics ul li:not(.metrics-heading) {
   margin-bottom: 8px;
   font-weight: 500;
   color: #0a1f33;
 }
+
 
 /* ==========================
    VIDEO GRID
