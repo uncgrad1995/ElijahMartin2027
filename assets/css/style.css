@@ -76,10 +76,27 @@ body {
 ========================== */
 .hero {
   display: flex;
-  align-items: flex-start; /* aligns top of text with top of photo */
-  gap: 40px;               /* more space between photo and text */
-  padding: 20px 40px 30px 40px; /* top/right/bottom/left */
-  background: var(--light-blue);
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 20px 20px 30px 20px;
+  background: #e6f0fa;
+  flex-wrap: wrap; /* helps on smaller screens */
+}
+
+.hero-photos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* space between stacked photos */
+}
+
+.extra-photo {
+  width: 220px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
 }
 
 .player-photo {
