@@ -81,33 +81,34 @@ body {
   gap: 30px;
   padding: 20px 20px 30px 20px;
   background: #e6f0fa;
-  flex-wrap: wrap; /* ensures responsiveness */
+  flex-wrap: wrap; /* keeps responsive */
+}
+
+.player-photo {
+  width: 280px;          /* main image width */
+  height: 420px;          /* maintain ratio */
+  border-radius: 10px;
+  object-fit: contain;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .hero-photos {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* aligns the bottom of the stack with the profile photo */
-  gap: 10px; /* space between the two small photos */
-  margin-top: auto;
+  justify-content: flex-end; /* bottom-aligns stack with main photo */
+  gap: 10px;
 }
 
 .extra-photo {
-  width: 280px; /* smaller width */
-  height: 200px; /* small rectangle shape */
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-
-.player-photo {
-  width: 280px;          /* fixed width */
-  height: auto;          /* maintain aspect ratio */
+  width: 280px;               /* same width as profile photo */
+  height: 210px;                /* each half the height visually */
+  aspect-ratio: 1 / 1.6;      /* maintain good shape */
   border-radius: 10px;
-  object-fit: contain;   /* keeps entire image visible */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border: 3px solid var(--carolina-blue);
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
+
 
 .hero-text {
   display: flex;
