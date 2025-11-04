@@ -153,12 +153,12 @@ body {
   color: var(--carolina-blue);
 }
 
-/* Remove bullets for the main player stats list */
-.hero-text ul:first-of-type {
-  list-style: none;  /* removes bullets */
+/* Remove bullets for all lists in hero-text */
+.hero-text ul {
+  list-style: none;   /* removes bullets */
   padding-left: 0;
+  margin: 5px 0 10px 0;
 }
-
 
 .hero-text ul li {
   margin-bottom: 5px;
