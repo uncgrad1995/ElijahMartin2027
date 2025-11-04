@@ -9,7 +9,6 @@
   --light-blue: #E6F0FA;
   --white: #FFFFFF;
 }
-
 .recent-teams {
   list-style-type: disc;  /* standard bullets */
   margin-left: 20px;      /* indentation */
@@ -21,7 +20,6 @@
   font-weight: 500;
   color: #0a1f33;         /* dark blue, matches theme */
 }
-
 
 
 /* ==========================
