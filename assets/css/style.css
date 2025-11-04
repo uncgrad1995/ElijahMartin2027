@@ -10,17 +10,23 @@
   --white: #FFFFFF;
 }
 
-.recent-teams {
-  list-style-type: disc; /* regular bullets */
-  margin-left: 20px;
+.recent-teams-inline {
+  list-style-type: disc;  /* keep bullets */
+  margin: 5px 0 0 20px;   /* small top margin, indent bullets */
   padding-left: 0;
 }
 
-.recent-teams li {
-  margin-bottom: 5px;
+.recent-teams-inline li {
+  display: inline;        /* horizontal inline layout */
+  margin-right: 15px;     /* spacing between teams */
   font-weight: 500;
-  color: #13294B; /* navy text */
+  color: #13294B;         /* navy text for visibility */
 }
+
+.recent-teams-inline li::before {
+  content: "• ";          /* adds bullet manually for inline */
+}
+
 
 /* ==========================
    BASE STYLES
