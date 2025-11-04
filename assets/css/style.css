@@ -10,22 +10,18 @@
   --white: #FFFFFF;
 }
 
-.recent-teams-inline {
-  list-style-type: disc;  /* keep bullets */
-  margin: 5px 0 0 20px;   /* small top margin, indent bullets */
+.recent-teams {
+  list-style-type: disc;  /* standard bullets */
+  margin-left: 20px;      /* indentation */
   padding-left: 0;
 }
 
-.recent-teams-inline li {
-  display: inline;        /* horizontal inline layout */
-  margin-right: 15px;     /* spacing between teams */
+.recent-teams li {
+  margin-bottom: 5px;     /* small spacing between teams */
   font-weight: 500;
-  color: #13294B;         /* navy text for visibility */
+  color: #13294B;         /* dark blue, matches theme */
 }
 
-.recent-teams-inline li::before {
-  content: "• ";          /* adds bullet manually for inline */
-}
 
 
 /* ==========================
