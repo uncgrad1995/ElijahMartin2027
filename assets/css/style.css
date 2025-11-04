@@ -150,11 +150,12 @@ body {
   color: var(--carolina-blue);
 }
 
-.hero-text ul {
-  list-style-type: disc;  /* standard bullets */
-  padding-left: 20px;
-  margin: 5px 0 10px 0;
+/* Remove bullets for the main player stats list */
+.hero-text ul:first-of-type {
+  list-style: none;  /* removes bullets */
+  padding-left: 0;
 }
+
 
 .hero-text ul li {
   margin-bottom: 5px;
