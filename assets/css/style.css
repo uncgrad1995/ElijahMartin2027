@@ -9,17 +9,19 @@
   --light-blue: #E6F0FA;
   --white: #FFFFFF;
 }
+/* Recent Teams list - remove bullets, keep color */
 .recent-teams {
-  list-style-type: disc;  /* standard bullets */
-  margin-left: 20px;      /* indentation */
+  list-style: none;    /* removes bullets */
   padding-left: 0;
+  margin: 5px 0 10px 0;
 }
 
 .recent-teams li {
-  margin-bottom: 5px;     /* small spacing between teams */
+  margin-bottom: 5px;
   font-weight: 500;
-  color: #0a1f33;         /* dark blue, matches theme */
+  color: var(--carolina-blue);  /* matches subtitle and "Recent Teams" heading */
 }
+
 
 
 /* ==========================
