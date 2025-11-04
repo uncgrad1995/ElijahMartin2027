@@ -9,20 +9,6 @@
   --light-blue: #E6F0FA;
   --white: #FFFFFF;
 }
-/* Recent Teams list - remove bullets, keep color */
-.recent-teams {
-  list-style: none;    /* removes bullets */
-  padding-left: 0;
-  margin: 5px 0 10px 0;
-}
-
-.recent-teams li {
-  margin-bottom: 5px;
-  font-weight: 500;
-  color: var(--carolina-blue);  /* matches subtitle and "Recent Teams" heading */
-}
-
-
 
 /* ==========================
    BASE STYLES
@@ -34,6 +20,12 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 
 /* ==========================
@@ -49,16 +41,17 @@ body {
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  flex-wrap: wrap;
 }
 
 .nav-logo {
   color: var(--white);
   font-size: 1.5em;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
   gap: 25px;
 }
@@ -73,21 +66,35 @@ body {
   color: var(--carolina-blue);
 }
 
+/* Hamburger for mobile */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  display: block;
+  border-radius: 2px;
+}
+
 /* ==========================
-   HERO SECTION — BALANCED ALIGNMENT
+   HERO SECTION
 ========================== */
 .hero {
   display: flex;
-  align-items: flex-start;        /* top-aligned with photos */
+  align-items: flex-start;
   justify-content: space-between;
   gap: 30px;
   padding: 20px 20px 30px 20px;
-  background: #e6f0fa;
+  background: var(--light-blue);
   flex-wrap: wrap;
-  position: relative;
 }
 
-/* Main profile image (left) */
 .player-photo {
   width: 420px;
   height: 600px;
@@ -98,23 +105,51 @@ body {
   border: 3px solid var(--carolina-blue);
 }
 
-/* Text block — centered horizontally */
 .hero-text {
   flex: 1;
-  max-width: 420px;
-  margin: 0 auto;               /* centers horizontally */
-  text-align: center;           /* centers text content */
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Right-side stacked photos */
+.hero-text h1 {
+  color: var(--navy);
+  font-size: 2.3em;
+  margin-bottom: 0.2em;
+}
+
+.hero-text h2 {
+  color: var(--carolina-blue);
+  font-weight: 700;
+}
+
+.hero-text h3 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: var(--carolina-blue);
+}
+
+.hero-text ul li {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #0a1f33;
+}
+
+.recent-teams li {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: var(--carolina-blue);
+}
+
 .hero-photos {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;   /* aligns top with text and left photo */
+  justify-content: flex-start;
   gap: 10px;
 }
 
-/* Two stacked photos */
 .extra-photo {
   width: 420px;
   height: 200px;
@@ -124,68 +159,12 @@ body {
   border: 3px solid var(--carolina-blue);
   box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
-.hero-text h2 {
-  color: var(--carolina-blue); 
-  font-weight: 700;             /* bold */
-}
-
-.hero-text {
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;     /* keeps text from stretching too far */
-}
-
-.hero-text h1 {
-  color: var(--navy);
-  font-size: 2.3em;
-  margin-bottom: 0.2em;
-}
-
-.hero-text h3 {
-  margin-top: 15px;
-  margin-bottom: 5px;
-  color: var(--carolina-blue);
-}
-
-/* Remove bullets for all lists in hero-text */
-.hero-text ul {
-  list-style: none;   /* removes bullets */
-  padding-left: 0;
-  margin: 5px 0 10px 0;
-}
-
-.hero-text ul li {
-  margin-bottom: 5px;
-  font-weight: 500;
-  color: #0a1f33;
-}
 
 /* ==========================
-   RESPONSIVE HERO
-========================== */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .hero-text {
-    max-width: 100%;
-  }
-
-  .hero-text ul {
-    padding-left: 0;
-    list-style-position: inside;
-  }
-}
-
-
-/* ==========================
-   SECTION STYLES
+   SECTIONS
 ========================== */
 section {
-  padding: 30px 60px; /* more space left and right */
+  padding: 30px 60px;
   margin: 25px auto;
   max-width: 1000px;
   background: var(--white);
@@ -200,14 +179,16 @@ section h3 {
   margin-bottom: 20px;
   font-size: 1.5em;
 }
-/* Remove bullets for all metrics list items */
+
+/* ==========================
+   METRICS
+========================== */
 #metrics ul {
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
 
-/* Metrics headings */
 .metrics-heading {
   font-weight: 700;
   font-size: 1.15em;
@@ -218,13 +199,11 @@ section h3 {
   display: block;
 }
 
-/* Regular stats items */
 #metrics ul li:not(.metrics-heading) {
   margin-bottom: 8px;
   font-weight: 500;
   color: #0a1f33;
 }
-
 
 /* ==========================
    VIDEO GRID
@@ -256,20 +235,8 @@ section h3 {
   color: var(--navy);
 }
 
-@media (max-width: 992px) {
-  .video-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .video-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* ==========================
-   INFO CARDS (References & Contact)
+   INFO CARDS
 ========================== */
 .info-container {
   display: flex;
@@ -297,22 +264,16 @@ section h3 {
   color: var(--carolina-blue);
 }
 
-.contact-links {
-  list-style: none;
-  padding-left: 0;
-  margin: 10px 0 0 0;
-}
-
 .contact-links li {
   display: flex;
-  gap: 15px;           /* space between label and link */
+  gap: 15px;
   margin-bottom: 8px;
   align-items: center;
 }
 
 .contact-links .label {
   display: inline-block;
-  width: 180px;        /* fixed width so all labels align */
+  width: 180px;
   font-weight: 600;
   color: var(--navy);
 }
@@ -327,8 +288,6 @@ section h3 {
   color: var(--carolina-blue);
 }
 
-
-
 /* ==========================
    FOOTER
 ========================== */
@@ -339,3 +298,57 @@ footer {
   padding: 15px 0;
   font-size: 0.9rem;
 }
+
+/* ==========================
+   RESPONSIVE / MOBILE
+========================== */
+@media (max-width: 992px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .player-photo,
+  .extra-photo {
+    width: 90%;
+    height: auto;
+    max-width: 400px;
+  }
+
+  .hero-photos {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-text {
+    max-width: 90%;
+  }
+
+  /* Navbar toggle */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .info-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
