@@ -90,7 +90,7 @@ body {
 /* Main profile image */
 .player-photo {
   width: 420px;
-  height: 420px;
+  height: 600px;
   border-radius: 10px;
   object-fit: cover;       /* fills the entire box, no empty borders */
   object-position: center; /* centers the subject */
@@ -109,7 +109,7 @@ body {
 /* Two stacked photos */
 .extra-photo {
   width: 420px;              /* exactly same as main photo */
-  height: 210px;             /* exactly half height */
+  height: 300px;             /* exactly half height */
   border-radius: 10px;
   object-fit: cover;         /* fills frame perfectly */
   object-position: center;
