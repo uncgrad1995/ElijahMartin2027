@@ -93,8 +93,8 @@ body {
 }
 
 .extra-photo {
-  width: 150px; /* smaller width */
-  height: 100px; /* small rectangle shape */
+  width: 280px; /* smaller width */
+  height: 200px; /* small rectangle shape */
   border-radius: 8px;
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
