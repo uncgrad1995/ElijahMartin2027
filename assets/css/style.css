@@ -76,18 +76,19 @@ body {
 ========================== */
 .hero {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-start;        /* top-aligned with photos */
   justify-content: space-between;
   gap: 30px;
   padding: 20px 20px 30px 20px;
   background: #e6f0fa;
   flex-wrap: wrap;
+  position: relative;
 }
 
 /* Main profile image (left) */
 .player-photo {
   width: 420px;
-  height: 680px;
+  height: 600px;
   border-radius: 10px;
   object-fit: cover;
   object-position: center;
@@ -95,27 +96,26 @@ body {
   border: 3px solid var(--carolina-blue);
 }
 
-/* Text column in the middle */
+/* Text block — centered horizontally */
 .hero-text {
   flex: 1;
-  max-width: 420px;           /* balances nicely between left & right */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  max-width: 420px;
+  margin: 0 auto;               /* centers horizontally */
+  text-align: center;           /* centers text content */
 }
 
-/* Right-side photo stack */
+/* Right-side stacked photos */
 .hero-photos {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;  /* bottom-aligns with text */
+  justify-content: flex-start;   /* aligns top with text and left photo */
   gap: 10px;
 }
 
-/* Stacked photos (slightly taller for alignment) */
+/* Two stacked photos */
 .extra-photo {
   width: 420px;
-  height: 340px;              /* a bit taller than half (300px) */
+  height: 340px;
   border-radius: 10px;
   object-fit: cover;
   object-position: center;
