@@ -273,13 +273,20 @@ section h3 {
 }
 
 .contact-links {
-  list-style: none;      /* remove bullets */
-  padding-left: 0;       /* remove default indent */
-  margin: 10px 0 0 0;    /* space above list */
+  list-style: none;
+  padding-left: 0;
+  margin: 10px 0 0 0;
 }
 
 .contact-links li {
-  margin-bottom: 6px;    /* spacing between links */
+  display: flex;
+  justify-content: space-between; /* left-align label, right-align link */
+  margin-bottom: 8px;
+}
+
+.contact-links .label {
+  font-weight: 600;
+  color: var(--navy);
 }
 
 .contact-links a {
@@ -291,6 +298,7 @@ section h3 {
 .contact-links a:hover {
   color: var(--carolina-blue);
 }
+
 
 /* ==========================
    FOOTER
