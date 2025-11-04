@@ -74,6 +74,9 @@ body {
 /* ==========================
    HERO SECTION REFINED
 ========================== */
+/* ==========================
+   HERO SECTION FINAL FIX
+========================== */
 .hero {
   display: flex;
   align-items: flex-start;
@@ -84,28 +87,33 @@ body {
   flex-wrap: wrap; /* keeps responsive */
 }
 
+/* Main profile image */
 .player-photo {
-  width: 420px;          /* main image width */
-  height: 420px;          /* maintain ratio */
+  width: 420px;
+  height: 420px;
   border-radius: 10px;
-  object-fit: contain;
+  object-fit: cover;       /* fills the entire box, no empty borders */
+  object-position: center; /* centers the subject */
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border: 3px solid var(--carolina-blue); /* optional for consistency */
 }
 
+/* Right-side photo stack */
 .hero-photos {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* bottom-aligns stack with main photo */
+  justify-content: flex-end; /* aligns bottom edges */
   gap: 10px;
 }
 
+/* Two stacked photos */
 .extra-photo {
-  width: 420px;               /* same width as profile photo */
-  height: 210px;                /* each half the height visually */
-  aspect-ratio: 1 / 1.6;      /* maintain good shape */
+  width: 420px;              /* exactly same as main photo */
+  height: 210px;             /* exactly half height */
   border-radius: 10px;
+  object-fit: cover;         /* fills frame perfectly */
+  object-position: center;
   border: 3px solid var(--carolina-blue);
-  object-fit: cover;
   box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
 
