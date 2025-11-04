@@ -117,7 +117,7 @@ body {
 /* Two stacked photos */
 .extra-photo {
   width: 420px;
-  height: 300px;
+  height: 200px;
   border-radius: 10px;
   object-fit: cover;
   object-position: center;
