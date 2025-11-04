@@ -280,11 +280,14 @@ section h3 {
 
 .contact-links li {
   display: flex;
-  justify-content: space-between; /* left-align label, right-align link */
+  gap: 15px;           /* space between label and link */
   margin-bottom: 8px;
+  align-items: center;
 }
 
 .contact-links .label {
+  display: inline-block;
+  width: 180px;        /* fixed width so all labels align */
   font-weight: 600;
   color: var(--navy);
 }
@@ -298,6 +301,7 @@ section h3 {
 .contact-links a:hover {
   color: var(--carolina-blue);
 }
+
 
 
 /* ==========================
