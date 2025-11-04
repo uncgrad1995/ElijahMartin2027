@@ -81,23 +81,25 @@ body {
   gap: 30px;
   padding: 20px 20px 30px 20px;
   background: #e6f0fa;
-  flex-wrap: wrap; /* helps on smaller screens */
+  flex-wrap: wrap; /* ensures responsiveness */
 }
 
 .hero-photos {
   display: flex;
   flex-direction: column;
-  gap: 0px; /* space between stacked photos */
+  justify-content: flex-end; /* aligns the bottom of the stack with the profile photo */
+  gap: 10px; /* space between the two small photos */
+  margin-top: auto;
 }
 
 .extra-photo {
-  width: 120px;
-  border-radius: 10px;
+  width: 150px; /* smaller width */
+  height: 100px; /* small rectangle shape */
+  border-radius: 8px;
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-}
 
 .player-photo {
   width: 280px;          /* fixed width */
