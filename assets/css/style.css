@@ -72,10 +72,7 @@ body {
 }
 
 /* ==========================
-   HERO SECTION REFINED
-========================== */
-/* ==========================
-   HERO SECTION FINAL FIX
+   HERO SECTION — BALANCED ALIGNMENT
 ========================== */
 .hero {
   display: flex;
@@ -84,38 +81,48 @@ body {
   gap: 30px;
   padding: 20px 20px 30px 20px;
   background: #e6f0fa;
-  flex-wrap: wrap; /* keeps responsive */
+  flex-wrap: wrap;
 }
 
-/* Main profile image */
+/* Main profile image (left) */
 .player-photo {
   width: 420px;
   height: 600px;
   border-radius: 10px;
-  object-fit: cover;       /* fills the entire box, no empty borders */
-  object-position: center; /* centers the subject */
+  object-fit: cover;
+  object-position: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  border: 3px solid var(--carolina-blue); /* optional for consistency */
+  border: 3px solid var(--carolina-blue);
+}
+
+/* Text column in the middle */
+.hero-text {
+  flex: 1;
+  max-width: 420px;           /* balances nicely between left & right */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 /* Right-side photo stack */
 .hero-photos {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* aligns bottom edges */
+  justify-content: flex-end;  /* bottom-aligns with text */
   gap: 10px;
 }
 
-/* Two stacked photos */
+/* Stacked photos (slightly taller for alignment) */
 .extra-photo {
-  width: 420px;              /* exactly same as main photo */
-  height: 300px;             /* exactly half height */
+  width: 420px;
+  height: 340px;              /* a bit taller than half (300px) */
   border-radius: 10px;
-  object-fit: cover;         /* fills frame perfectly */
+  object-fit: cover;
   object-position: center;
   border: 3px solid var(--carolina-blue);
   box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
+
 
 
 .hero-text {
