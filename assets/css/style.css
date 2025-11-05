@@ -88,10 +88,10 @@ ul {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: 25px;
-  padding: 20px 20px 30px 20px;
+  gap: 35px;
+  padding: 30px 40px;
   background: var(--light-blue);
-  flex-wrap: nowrap;
+  flex-wrap: wrap; /* ✅ allow slight wrapping when needed */
 }
 
 .player-photo {
@@ -105,9 +105,9 @@ ul {
 }
 
 .hero-text {
-  flex: 0 1 360px;
-  max-width: 360px;
-  margin: 0 10px;
+  flex: 1 1 420px; /* ✅ allow growth, keep balanced width */
+  max-width: 480px;
+  margin: 0 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
