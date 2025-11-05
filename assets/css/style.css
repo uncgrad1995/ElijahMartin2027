@@ -352,3 +352,36 @@ footer {
     gap: 20px;
   }
 
+/* ==========================
+   BACK TO TOP BUTTON
+========================== */
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: var(--carolina-blue);
+  color: var(--white);
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.back-to-top:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+/* Hide on small screens until user scrolls */
+@media (max-width: 600px) {
+  .back-to-top {
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 12px;
+    font-size: 0.9em;
+  }
+}
