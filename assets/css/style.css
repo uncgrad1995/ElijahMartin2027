@@ -298,7 +298,6 @@ footer {
   padding: 15px 0;
   font-size: 0.9rem;
 }
-
 /* ==========================
    RESPONSIVE / MOBILE
 ========================== */
@@ -351,6 +350,7 @@ footer {
     flex-direction: column;
     gap: 20px;
   }
+}
 
 /* ==========================
    BACK TO TOP FLOATING BUTTON
@@ -367,7 +367,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
+  font-size: 22px;
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: opacity 0.3s ease, transform 0.2s ease, background-color 0.3s ease;
@@ -386,4 +386,10 @@ footer {
   opacity: 1;
   pointer-events: auto;
 }
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 
