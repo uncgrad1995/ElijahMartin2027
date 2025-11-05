@@ -117,7 +117,7 @@ ul {
 .hero-text h1 {
   color: var(--navy);
   font-size: 2.3em;
-  margin-bottom: 0.2em;
+  margin-bottom: 0.1em;
 }
 
 .hero-text h2 {
@@ -126,7 +126,7 @@ ul {
 }
 
 .hero-text h3 {
-  margin-top: 15px;
+  margin-top: 10px;
   margin-bottom: 5px;
   color: var(--carolina-blue);
 }
@@ -180,7 +180,7 @@ ul {
   background-color: var(--carolina-blue);
   color: var(--white);
   font-weight: 600;
-  font-size: 0.95em; /* ⬅ smaller text to prevent wrapping */
+  font-size: 0.75em; /* ⬅ smaller text to prevent wrapping */
   padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
