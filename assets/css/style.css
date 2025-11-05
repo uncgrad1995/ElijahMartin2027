@@ -167,20 +167,26 @@ ul {
 .cta-buttons {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  flex-wrap: wrap; /* allows wrapping if screen gets tight */
+  gap: 12px;
   margin-top: 20px;
 }
 
 .cta-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   background-color: var(--carolina-blue);
   color: var(--white);
   font-weight: 600;
-  padding: 12px 26px;
+  font-size: 0.95em; /* ⬅ smaller text to prevent wrapping */
+  padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
   transition: 0.3s ease;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  white-space: nowrap; /* keeps icon + text together */
 }
 
 .cta-button:hover {
@@ -196,7 +202,15 @@ ul {
   background-color: var(--carolina-blue);
 }
 
-/* Stack vertically on mobile */
+.cta-button.tertiary {
+  background-color: #005fa3; /* slightly darker blue for variety */
+}
+
+.cta-button.tertiary:hover {
+  background-color: var(--navy);
+}
+
+/* Stack vertically on narrow screens */
 @media (max-width: 600px) {
   .cta-buttons {
     flex-direction: column;
@@ -208,6 +222,7 @@ ul {
     text-align: center;
   }
 }
+
 
 /* ==========================
    SECTION STYLES
