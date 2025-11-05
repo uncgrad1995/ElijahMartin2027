@@ -353,31 +353,35 @@ footer {
   }
 
 /* ==========================
-   BACK TO TOP BUTTON
+   BACK TO TOP FLOATING BUTTON
 ========================== */
 .back-to-top {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
   background-color: var(--carolina-blue);
   color: white;
-  padding: 12px 16px;
-  border-radius: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
   text-decoration: none;
-  font-weight: 600;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease, transform 0.2s ease, background-color 0.3s ease;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.2s ease;
   z-index: 2000;
 }
 
 .back-to-top:hover {
   background-color: var(--navy);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 }
 
-/* Show the button when scrolling */
+/* Show button after scrolling */
 .show-back-to-top {
   opacity: 1;
   pointer-events: auto;
