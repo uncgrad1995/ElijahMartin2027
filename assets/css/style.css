@@ -41,7 +41,6 @@ ul {
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  flex-wrap: wrap;
 }
 
 .nav-logo {
@@ -92,33 +91,8 @@ ul {
   gap: 25px;
   padding: 20px 20px 30px 20px;
   background: var(--light-blue);
-  flex-wrap: nowrap; /* keep three columns in one line */
+  flex-wrap: nowrap;
 }
-
-.hero-text {
-  flex: 0 1 360px; /* keeps text section from pushing out the layout */
-  max-width: 360px;
-  margin: 0 10px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero-photos {
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 10px;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
 
 .player-photo {
   width: 420px;
@@ -128,6 +102,16 @@ ul {
   object-position: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   border: 3px solid var(--carolina-blue);
+}
+
+.hero-text {
+  flex: 0 1 360px;
+  max-width: 360px;
+  margin: 0 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-text h1 {
@@ -159,6 +143,14 @@ ul {
   color: var(--carolina-blue);
 }
 
+.hero-photos {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
 .extra-photo {
   width: 420px;
   height: 200px;
@@ -170,7 +162,55 @@ ul {
 }
 
 /* ==========================
-   SECTIONS
+   CALL TO ACTION BUTTONS
+========================== */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--carolina-blue);
+  color: var(--white);
+  font-weight: 600;
+  padding: 12px 26px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+  background-color: var(--navy);
+  transform: translateY(-3px);
+}
+
+.cta-button.secondary {
+  background-color: var(--navy);
+}
+
+.cta-button.secondary:hover {
+  background-color: var(--carolina-blue);
+}
+
+/* Stack vertically on mobile */
+@media (max-width: 600px) {
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .cta-button {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+/* ==========================
+   SECTION STYLES
 ========================== */
 section {
   padding: 30px 60px;
@@ -273,30 +313,6 @@ section h3 {
   color: var(--carolina-blue);
 }
 
-.contact-links li {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 8px;
-  align-items: center;
-}
-
-.contact-links .label {
-  display: inline-block;
-  width: 180px;
-  font-weight: 600;
-  color: var(--navy);
-}
-
-.contact-links a {
-  color: var(--navy);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.contact-links a:hover {
-  color: var(--carolina-blue);
-}
-
 /* ==========================
    FOOTER
 ========================== */
@@ -307,56 +323,9 @@ footer {
   padding: 15px 0;
   font-size: 0.9rem;
 }
-/* ==========================
-   CALL TO ACTION BUTTONS
-========================== */
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: var(--carolina-blue);
-  color: var(--white);
-  font-weight: 600;
-  padding: 12px 26px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.cta-button:hover {
-  background-color: var(--navy);
-  transform: translateY(-3px);
-}
-
-.cta-button.secondary {
-  background-color: var(--navy);
-}
-
-.cta-button.secondary:hover {
-  background-color: var(--carolina-blue);
-}
-
-/* Stack vertically on mobile */
-@media (max-width: 600px) {
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  .cta-button {
-    width: 80%;
-    text-align: center;
-  }
-}
 
 /* ==========================
-   RESPONSIVE / MOBILE
+   RESPONSIVE
 ========================== */
 @media (max-width: 992px) {
   .video-grid {
@@ -377,8 +346,6 @@ footer {
     height: auto;
     max-width: 400px;
   }
-}
-
 
   .hero-photos {
     flex-direction: column;
@@ -389,19 +356,38 @@ footer {
     max-width: 90%;
   }
 
-  /* Navbar toggle */
   .nav-links {
     display: none;
-    flex-direction: column;
+    position: absolute;
+    top: 65px;
+    left: 0;
     width: 100%;
+    background-color: var(--navy);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
   }
 
   .nav-links.show {
     display: flex;
+    transform: translateY(0);
   }
 
   .nav-toggle {
     display: flex;
+  }
+
+  .nav-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+  .nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
   }
 
   .info-container {
@@ -411,7 +397,7 @@ footer {
 }
 
 /* ==========================
-   BACK TO TOP FLOATING BUTTON
+   BACK TO TOP
 ========================== */
 .back-to-top {
   position: fixed;
@@ -439,75 +425,11 @@ footer {
   transform: translateY(-4px);
 }
 
-/* Show button after scrolling */
 .show-back-to-top {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
-}
-
-/* ==========================
-   HAMBURGER DRAWER MENU
-========================== */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-  z-index: 2001;
-}
-
-.nav-toggle span {
-  width: 28px;
-  height: 3px;
-  background: var(--white);
-  border-radius: 2px;
-  transition: 0.3s ease;
-}
-
-/* Drawer menu (hidden by default) */
-.nav-links {
-  display: flex;
-  gap: 25px;
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 65px; /* just below navbar */
-    left: 0;
-    width: 100%;
-    background-color: var(--navy);
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 2000;
-    transform: translateY(-100%);
-    transition: transform 0.4s ease;
-  }
-
-  .nav-links.show {
-    display: flex;
-    transform: translateY(0);
-  }
-
-  .nav-toggle {
-    display: flex;
-  }
-
-  .nav-toggle.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 6px);
-  }
-  .nav-toggle.open span:nth-child(2) {
-    opacity: 0;
-  }
-  .nav-toggle.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-  }
 }
