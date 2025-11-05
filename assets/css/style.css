@@ -88,12 +88,38 @@ ul {
 .hero {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 30px;
+  justify-content: center;
+  gap: 25px;
   padding: 20px 20px 30px 20px;
   background: var(--light-blue);
-  flex-wrap: nowrap; /* prevents right images from wrapping below */
-   
+  flex-wrap: nowrap; /* keep three columns in one line */
+}
+
+.hero-text {
+  flex: 0 1 360px; /* keeps text section from pushing out the layout */
+  max-width: 360px;
+  margin: 0 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-photos {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
 .player-photo {
   width: 420px;
   height: 600px;
@@ -104,13 +130,6 @@ ul {
   border: 3px solid var(--carolina-blue);
 }
 
-.hero-text {
-  flex: 1;
-  max-width: 420px;
-  margin: 0 auto;
-  text-align: center;
-}
-   
 .hero-text h1 {
   color: var(--navy);
   font-size: 2.3em;
@@ -138,14 +157,6 @@ ul {
   margin-bottom: 5px;
   font-weight: 500;
   color: var(--carolina-blue);
-}
-
-.hero-photos {
-  flex-shrink: 0; /* keeps right column from collapsing */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 10px;
 }
 
 .extra-photo {
