@@ -299,6 +299,54 @@ footer {
   font-size: 0.9rem;
 }
 /* ==========================
+   CALL TO ACTION BUTTONS
+========================== */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--carolina-blue);
+  color: var(--white);
+  font-weight: 600;
+  padding: 12px 26px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+  background-color: var(--navy);
+  transform: translateY(-3px);
+}
+
+.cta-button.secondary {
+  background-color: var(--navy);
+}
+
+.cta-button.secondary:hover {
+  background-color: var(--carolina-blue);
+}
+
+/* Stack vertically on mobile */
+@media (max-width: 600px) {
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .cta-button {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+/* ==========================
    RESPONSIVE / MOBILE
 ========================== */
 @media (max-width: 992px) {
@@ -453,18 +501,3 @@ html {
     transform: rotate(-45deg) translate(6px, -6px);
   }
 }
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.cta-button.secondary {
-  background-color: var(--navy);
-}
-
-.cta-button.secondary:hover {
-  background-color: var(--carolina-blue);
-}
-
