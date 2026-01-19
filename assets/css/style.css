@@ -268,6 +268,50 @@ section h3 {
   font-weight: 500;
   color: #0a1f33;
 }
+/* Screenshots */
+.video-screenshot {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+  display: block;
+  cursor: zoom-in;
+}
+
+.screenshot-link {
+  display: block;
+}
+
+/* CSS-only lightbox using :target */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 9999;
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 95vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Click anywhere to close */
+.lightbox-close {
+  position: absolute;
+  inset: 0;
+  cursor: zoom-out;
+}
 
 /* ==========================
    VIDEO GRID
