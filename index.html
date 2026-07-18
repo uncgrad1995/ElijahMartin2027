@@ -5,7 +5,871 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elijah Martin | Class of 2027</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --carolina-blue: #4B9CD3;
+  --navy: #002F6C;
+  --light-blue: #E6F0FA;
+  --white: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--white);
+  color: var(--navy);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.navbar {
+  background-color: var(--navy);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.nav-logo {
+  color: var(--white);
+  font-size: 1.5em;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--carolina-blue);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  display: block;
+  border-radius: 2px;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  padding: 30px 40px;
+  background: var(--light-blue);
+  flex-wrap: wrap;
+}
+
+.player-photo {
+  width: 420px;
+  height: 560px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border: 3px solid var(--carolina-blue);
+}
+
+.hero-text {
+  flex: 1 1 420px;
+  max-width: 500px;
+  margin: 0 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-text h1 {
+  color: var(--navy);
+  font-size: 2.8em;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0 0 0.2em;
+}
+
+.hero-text h2 {
+  color: var(--carolina-blue);
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.quick-snapshot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px 0 20px;
+}
+
+.quick-snapshot span {
+  background: var(--navy);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: all 0.2s ease;
+}
+
+.quick-snapshot span:hover {
+  transform: translateY(-2px);
+  background: var(--carolina-blue);
+}
+
+.hero-text h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: var(--carolina-blue);
+}
+
+.hero-text ul li,
+.recent-teams li {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.recent-teams {
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.recent-teams li {
+  color: var(--carolina-blue);
+}
+
+.hero-photos {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.extra-photo {
+  width: 420px;
+  height: 180px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid var(--carolina-blue);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.player-photo,
+.extra-photo {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.player-photo:hover,
+.extra-photo:hover {
+  transform: scale(1.015);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--carolina-blue);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.82em;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  white-space: nowrap;
+  min-width: 155px;
+}
+
+.cta-button:hover {
+  background-color: var(--navy);
+  transform: translateY(-3px);
+}
+
+.cta-button.secondary {
+  background-color: var(--navy);
+}
+
+.cta-button.secondary:hover {
+  background-color: var(--carolina-blue);
+}
+
+.cta-button.tertiary {
+  background-color: #005fa3;
+}
+
+.cta-button.tertiary:hover {
+  background-color: var(--navy);
+}
+
+section {
+  padding: 30px 60px;
+  margin: 40px auto;
+  max-width: 1000px;
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid #edf3f8;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+section h3 {
+  color: var(--carolina-blue);
+  border-bottom: 2px solid #b7d6ee;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+#metrics ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.metrics-heading {
+  font-weight: 700;
+  font-size: 1.15em;
+  color: var(--carolina-blue);
+  margin: 20px 0 10px 0;
+  border-bottom: 2px solid var(--carolina-blue);
+  padding-bottom: 4px;
+  display: block;
+}
+
+#metrics ul li:not(.metrics-heading) {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #0a1f33;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  justify-items: center;
+}
+
+.video-item {
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid #e3edf6;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.video-item iframe,
+.video-item video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.video-caption {
+  margin-top: 8px;
+  font-size: 0.95em;
+  color: var(--navy);
+  font-weight: 600;
+  text-align: center;
+}
+
+.video-screenshot {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+  display: block;
+  cursor: zoom-in;
+}
+
+.screenshot-link {
+  display: block;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 9999;
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 95vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+}
+
+.lightbox-close {
+  position: absolute;
+  inset: 0;
+  cursor: zoom-out;
+}
+
+.info-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.info-card {
+  flex: 1 1 400px;
+  background-color: var(--light-blue);
+  border: 1px solid #cce0f2;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card h3 {
+  text-align: center;
+  color: var(--carolina-blue);
+}
+
+footer {
+  background-color: var(--carolina-blue);
+  color: var(--white);
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--carolina-blue);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease, transform 0.2s ease, background-color 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2000;
+}
+
+.back-to-top:hover {
+  background-color: var(--navy);
+  transform: translateY(-4px);
+}
+
+.show-back-to-top {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 992px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 28px 16px;
+  }
+
+  .player-photo,
+  .extra-photo {
+    width: 90%;
+    height: auto;
+    max-width: 400px;
+  }
+
+  .hero-photos {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .hero-text {
+    max-width: 90%;
+    margin: 0;
+  }
+
+  .hero-text h1 {
+    font-size: 2.1em;
+  }
+
+  .quick-snapshot span {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+
+  .navbar {
+    padding: 14px 20px;
+  }
+
+  .nav-logo {
+    font-size: 1.15em;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background-color: var(--navy);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+  }
+
+  .nav-links.show {
+    display: flex;
+    transform: translateY(0);
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+
+  .nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .info-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  section {
+    padding: 24px 18px;
+    margin: 24px 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cta-button {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+/* Summer 2026 schedule styles */
+
+#schedule {
+  max-width: 1100px;
+}
+
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 24px;
+}
+
+.schedule-header h3 {
+  margin-top: 0;
+}
+
+.section-eyebrow {
+  margin: 0 0 2px;
+  color: var(--navy);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.schedule-intro {
+  max-width: 720px;
+  margin: -8px 0 0;
+  color: #334e68;
+}
+
+.schedule-highlight {
+  flex: 0 0 auto;
+  min-width: 145px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  box-shadow: 0 5px 14px rgba(0, 47, 108, 0.2);
+}
+
+.schedule-highlight-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.schedule-highlight strong {
+  display: block;
+  margin-top: 2px;
+  font-size: 1.7rem;
+  line-height: 1.1;
+}
+
+.recent-results {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.result-card {
+  min-height: 105px;
+  padding: 16px;
+  border: 1px solid #cce0f2;
+  border-radius: 12px;
+  background: var(--light-blue);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.result-value {
+  color: var(--navy);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.result-label {
+  margin-top: 7px;
+  color: #334e68;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.schedule-list {
+  display: grid;
+  gap: 14px;
+}
+
+.schedule-card {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  padding: 18px;
+  border: 1px solid #d9e7f2;
+  border-left: 5px solid var(--carolina-blue);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: 0 3px 10px rgba(0, 47, 108, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.schedule-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(0, 47, 108, 0.12);
+}
+
+.schedule-card.completed {
+  border-left-color: #8aa8bf;
+  background: #fbfdff;
+}
+
+.schedule-card.featured-result {
+  border-left-color: var(--navy);
+}
+
+.schedule-date {
+  min-height: 72px;
+  padding: 9px 8px;
+  border-radius: 10px;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.schedule-month {
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.schedule-date strong {
+  margin-top: 2px;
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+
+.schedule-details {
+  min-width: 0;
+}
+
+.schedule-details h4 {
+  margin: 2px 0 7px;
+  color: var(--navy);
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+.schedule-details h4 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.schedule-details h4 a:hover {
+  color: var(--carolina-blue);
+}
+
+.schedule-details p {
+  margin: 3px 0;
+  color: #486581;
+  font-size: 0.9rem;
+}
+
+.schedule-details p i {
+  width: 18px;
+  color: var(--carolina-blue);
+  text-align: center;
+}
+
+.event-status {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #e8eef3;
+  color: #526d82;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.event-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.event-highlights span {
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: var(--light-blue);
+  color: var(--navy);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.event-link {
+  color: var(--navy);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.event-link:hover {
+  color: var(--carolina-blue);
+}
+
+.event-link i {
+  margin-left: 4px;
+}
+
+.high-school-schedule {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: var(--light-blue);
+  color: var(--navy);
+  text-align: center;
+}
+
+.high-school-schedule a {
+  margin-left: 6px;
+  color: var(--navy);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .recent-results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .schedule-card {
+    grid-template-columns: 82px minmax(0, 1fr);
+  }
+
+  .event-link {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 600px) {
+  .schedule-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .schedule-highlight {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .recent-results {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .result-card {
+    min-height: 92px;
+    padding: 12px 8px;
+  }
+
+  .result-value {
+    font-size: 1.35rem;
+  }
+
+  .result-label {
+    font-size: 0.72rem;
+  }
+
+  .schedule-card {
+    grid-template-columns: 68px minmax(0, 1fr);
+    gap: 13px;
+    padding: 14px 12px;
+  }
+
+  .schedule-date {
+    min-height: 62px;
+  }
+
+  .schedule-month {
+    font-size: 0.58rem;
+  }
+
+  .schedule-date strong {
+    font-size: 1rem;
+  }
+
+  .schedule-details h4 {
+    font-size: 0.96rem;
+  }
+
+  .schedule-details p {
+    font-size: 0.8rem;
+  }
+
+  .event-highlights span {
+    font-size: 0.67rem;
+  }
+
+  .high-school-schedule a {
+    display: block;
+    margin: 5px 0 0;
+  }
+}
+
+</style>
 </head>
 
 <body id="top">
