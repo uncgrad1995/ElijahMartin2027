@@ -1,13 +1,545 @@
-/* =========================================================
-   Summer 2026 schedule and recruiting highlights
-   Append these rules to assets/css/style.css
-   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-.quick-snapshot .featured-metric {
-  background: var(--carolina-blue);
-  box-shadow: 0 0 0 3px rgba(75, 156, 211, 0.18),
-              0 4px 10px rgba(0, 47, 108, 0.22);
+:root {
+  --carolina-blue: #4B9CD3;
+  --navy: #002F6C;
+  --light-blue: #E6F0FA;
+  --white: #FFFFFF;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--white);
+  color: var(--navy);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.navbar {
+  background-color: var(--navy);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.nav-logo {
+  color: var(--white);
+  font-size: 1.5em;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--carolina-blue);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  display: block;
+  border-radius: 2px;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  padding: 30px 40px;
+  background: var(--light-blue);
+  flex-wrap: wrap;
+}
+
+.player-photo {
+  width: 420px;
+  height: 560px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border: 3px solid var(--carolina-blue);
+}
+
+.hero-text {
+  flex: 1 1 420px;
+  max-width: 500px;
+  margin: 0 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-text h1 {
+  color: var(--navy);
+  font-size: 2.8em;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0 0 0.2em;
+}
+
+.hero-text h2 {
+  color: var(--carolina-blue);
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.quick-snapshot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px 0 20px;
+}
+
+.quick-snapshot span {
+  background: var(--navy);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: all 0.2s ease;
+}
+
+.quick-snapshot span:hover {
+  transform: translateY(-2px);
+  background: var(--carolina-blue);
+}
+
+.hero-text h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: var(--carolina-blue);
+}
+
+.hero-text ul li,
+.recent-teams li {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.recent-teams {
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.recent-teams li {
+  color: var(--carolina-blue);
+}
+
+.hero-photos {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.extra-photo {
+  width: 420px;
+  height: 180px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid var(--carolina-blue);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.player-photo,
+.extra-photo {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.player-photo:hover,
+.extra-photo:hover {
+  transform: scale(1.015);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--carolina-blue);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.82em;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  white-space: nowrap;
+  min-width: 155px;
+}
+
+.cta-button:hover {
+  background-color: var(--navy);
+  transform: translateY(-3px);
+}
+
+.cta-button.secondary {
+  background-color: var(--navy);
+}
+
+.cta-button.secondary:hover {
+  background-color: var(--carolina-blue);
+}
+
+.cta-button.tertiary {
+  background-color: #005fa3;
+}
+
+.cta-button.tertiary:hover {
+  background-color: var(--navy);
+}
+
+section {
+  padding: 30px 60px;
+  margin: 40px auto;
+  max-width: 1000px;
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid #edf3f8;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+section h3 {
+  color: var(--carolina-blue);
+  border-bottom: 2px solid #b7d6ee;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+#metrics ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.metrics-heading {
+  font-weight: 700;
+  font-size: 1.15em;
+  color: var(--carolina-blue);
+  margin: 20px 0 10px 0;
+  border-bottom: 2px solid var(--carolina-blue);
+  padding-bottom: 4px;
+  display: block;
+}
+
+#metrics ul li:not(.metrics-heading) {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #0a1f33;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  justify-items: center;
+}
+
+.video-item {
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid #e3edf6;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.video-item iframe,
+.video-item video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.video-caption {
+  margin-top: 8px;
+  font-size: 0.95em;
+  color: var(--navy);
+  font-weight: 600;
+  text-align: center;
+}
+
+.video-screenshot {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+  display: block;
+  cursor: zoom-in;
+}
+
+.screenshot-link {
+  display: block;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 9999;
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 95vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+}
+
+.lightbox-close {
+  position: absolute;
+  inset: 0;
+  cursor: zoom-out;
+}
+
+.info-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.info-card {
+  flex: 1 1 400px;
+  background-color: var(--light-blue);
+  border: 1px solid #cce0f2;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card h3 {
+  text-align: center;
+  color: var(--carolina-blue);
+}
+
+footer {
+  background-color: var(--carolina-blue);
+  color: var(--white);
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--carolina-blue);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease, transform 0.2s ease, background-color 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2000;
+}
+
+.back-to-top:hover {
+  background-color: var(--navy);
+  transform: translateY(-4px);
+}
+
+.show-back-to-top {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 992px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 28px 16px;
+  }
+
+  .player-photo,
+  .extra-photo {
+    width: 90%;
+    height: auto;
+    max-width: 400px;
+  }
+
+  .hero-photos {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .hero-text {
+    max-width: 90%;
+    margin: 0;
+  }
+
+  .hero-text h1 {
+    font-size: 2.1em;
+  }
+
+  .quick-snapshot span {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+
+  .navbar {
+    padding: 14px 20px;
+  }
+
+  .nav-logo {
+    font-size: 1.15em;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background-color: var(--navy);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+  }
+
+  .nav-links.show {
+    display: flex;
+    transform: translateY(0);
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+
+  .nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .info-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  section {
+    padding: 24px 18px;
+    margin: 24px 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cta-button {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+/* Summer 2026 schedule styles */
 
 #schedule {
   max-width: 1100px;
