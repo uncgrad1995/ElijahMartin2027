@@ -869,6 +869,144 @@ footer {
   }
 }
 
+
+
+/* Recruiting advisor highlight */
+.advisor-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.advisor-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 17px;
+  border: 2px solid var(--carolina-blue);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--navy);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 47, 108, 0.14);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.advisor-pill:hover {
+  transform: translateY(-2px);
+  background: var(--light-blue);
+  box-shadow: 0 7px 18px rgba(0, 47, 108, 0.2);
+}
+
+.advisor-pill > i {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.advisor-pill span {
+  display: grid;
+  text-align: left;
+  line-height: 1.15;
+}
+
+.advisor-pill small {
+  color: var(--carolina-blue);
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.advisor-pill strong {
+  margin-top: 2px;
+  color: var(--navy);
+  font-size: 0.95rem;
+}
+
+.advisor-pill em {
+  margin-top: 2px;
+  color: #486581;
+  font-size: 0.75rem;
+  font-style: normal;
+}
+
+.advisor-mini-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 47, 108, 0.16);
+}
+
+.advisor-mini-button:hover {
+  background: var(--carolina-blue);
+}
+
+.advisor-contact-card {
+  margin-top: 20px;
+  border: 2px solid var(--carolina-blue);
+  background: var(--light-blue);
+}
+
+.advisor-contact-card .contact-role {
+  display: inline-block;
+  margin-bottom: 4px;
+  color: var(--carolina-blue);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.advisor-contact-card h4 {
+  margin: 0 0 4px;
+  color: var(--navy);
+}
+
+.advisor-contact-card p {
+  margin: 3px 0;
+}
+
+.advisor-contact-card a {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.advisor-contact-card a:hover {
+  color: var(--carolina-blue);
+}
+
+@media (max-width: 600px) {
+  .advisor-actions {
+    flex-direction: column;
+  }
+
+  .advisor-pill,
+  .advisor-mini-button {
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+}
+
 </style>
 </head>
 
@@ -925,6 +1063,20 @@ footer {
       <a href="#contact" class="cta-button secondary">Contact Elijah</a>
       <a href="#references" class="cta-button tertiary">Contact References</a>
     </div>
+        <div class="advisor-actions">
+          <a class="advisor-pill" href="tel:+14103027253" aria-label="Call recruiting advisor Adam Schlenoff">
+            <i class="fa-solid fa-user-tie"></i>
+            <span>
+              <small>Recruiting Advisor</small>
+              <strong>Adam Schlenoff</strong>
+              <em>JBC Consulting</em>
+            </span>
+          </a>
+          <a class="advisor-mini-button" href="mailto:coach.schlen@gmail.com">
+            <i class="fa-solid fa-envelope"></i> Email Adam
+          </a>
+        </div>
+
   </div>
 
   <div class="hero-photos">
@@ -1429,6 +1581,17 @@ footer {
       </ul>
     </div>
   </div>
+
+      <div class="contact-card advisor-contact-card">
+        <div class="contact-icon"><i class="fa-solid fa-user-tie"></i></div>
+        <div>
+          <span class="contact-role">Recruiting Advisor</span>
+          <h4>Adam Schlenoff</h4>
+          <p>JBC Consulting</p>
+          <p><a href="tel:+14103027253">(410) 302-7253</a></p>
+          <p><a href="mailto:coach.schlen@gmail.com">coach.schlen@gmail.com</a></p>
+        </div>
+      </div>
 </section>
 
 <footer>
