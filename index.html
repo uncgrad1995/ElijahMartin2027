@@ -101,6 +101,27 @@ body{padding-top:58px}
 @media(max-width:900px){.honors-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.honors-grid{grid-template-columns:1fr}}
 
+
+/* Photo collage */
+.photo-collage{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(170px,1fr));
+ gap:12px;
+ max-width:520px;
+ margin:0 auto;
+}
+.photo-collage img{
+ width:100%;
+ aspect-ratio:1/1;
+ object-fit:cover;
+ border-radius:12px;
+ box-shadow:0 6px 18px rgba(0,0,0,.18);
+ transition:transform .25s ease, box-shadow .25s ease;
+}
+.photo-collage img:hover{
+ transform:scale(1.03);
+ box-shadow:0 10px 24px rgba(0,0,0,.25);
+}
 </style>
 </head>
 <body id="top">
@@ -177,7 +198,7 @@ body{padding-top:58px}
 </div>
 </section>
 <main>
-<section class="section-shell" id="profile"><div class="section-heading"><div><span class="eyebrow">Player profile</span><h2>Competitive. Academic. Versatile.</h2><p>Elijah's production, leadership and baseball IQ consistently show up in game settings.</p></div></div><div class="story-grid"><div class="story-card"><p>Elijah Martin is a two-way player known for leadership, a strong bat, defensive versatility, reliability and consistent pitching. His on-field results regularly outpace showcase metrics. He thrives on competition, respects the game and combines athleticism with a high baseball IQ. Elijah is also a strong student seeking a college where he can compete at a high level while earning a degree that prepares him for life beyond baseball.</p><div class="value-grid"><div class="value-card"><i class="fa-solid fa-baseball"></i><h3>Starter Profile</h3><p>Four-pitch mix, strike thrower and proven game performer.</p></div><div class="value-card"><i class="fa-solid fa-arrows-rotate"></i><h3>Two-Way Value</h3><p>RHP with experience at shortstop and third base.</p></div><div class="value-card"><i class="fa-solid fa-graduation-cap"></i><h3>High Academic</h3><p>4.42 weighted GPA, 3.91 unweighted GPA and 1370 SAT.</p></div><div class="value-card"><i class="fa-solid fa-people-group"></i><h3>Leadership</h3><p>NHS member and Young Men's Service League chapter president.</p></div><div class="value-card"><i class="fa-solid fa-chart-line"></i><h3>Projection</h3><p>Velocity and physical development continue to trend upward.</p></div><div class="value-card"><i class="fa-solid fa-shield-heart"></i><h3>Team First</h3><p>Coachable, dependable and comfortable in competitive environments.</p></div></div></div><div class="photo-stack"><img alt="Elijah pitching" src="assets/images/Elijah Pitching.jpg"/><img alt="Elijah playing third base" src="assets/images/Elijah 3B.jpg"/><img alt="Elijah at Cooperstown" src="assets/images/Cooperstown-1.jpg"/></div></div></section>
+<section class="section-shell" id="profile"><div class="section-heading"><div><span class="eyebrow">Player profile</span><h2>Competitive. Academic. Versatile.</h2><p>Elijah's production, leadership and baseball IQ consistently show up in game settings.</p></div></div><div class="story-grid"><div class="story-card"><p>Elijah Martin is a two-way player known for leadership, a strong bat, defensive versatility, reliability and consistent pitching. His on-field results regularly outpace showcase metrics. He thrives on competition, respects the game and combines athleticism with a high baseball IQ. Elijah is also a strong student seeking a college where he can compete at a high level while earning a degree that prepares him for life beyond baseball.</p><div class="value-grid"><div class="value-card"><i class="fa-solid fa-baseball"></i><h3>Starter Profile</h3><p>Four-pitch mix, strike thrower and proven game performer.</p></div><div class="value-card"><i class="fa-solid fa-arrows-rotate"></i><h3>Two-Way Value</h3><p>RHP with experience at shortstop and third base.</p></div><div class="value-card"><i class="fa-solid fa-graduation-cap"></i><h3>High Academic</h3><p>4.42 weighted GPA, 3.91 unweighted GPA and 1370 SAT.</p></div><div class="value-card"><i class="fa-solid fa-people-group"></i><h3>Leadership</h3><p>NHS member and Young Men's Service League chapter president.</p></div><div class="value-card"><i class="fa-solid fa-chart-line"></i><h3>Projection</h3><p>Velocity and physical development continue to trend upward.</p></div><div class="value-card"><i class="fa-solid fa-shield-heart"></i><h3>Team First</h3><p>Coachable, dependable and comfortable in competitive environments.</p></div></div></div><div class="photo-collage"><img alt="Elijah pitching" src="assets/images/Elijah Pitching.jpg"/><img alt="Elijah playing third base" src="assets/images/Elijah 3B.jpg"/><img alt="Elijah at Cooperstown" src="assets/images/Cooperstown-1.jpg"/><img alt="Elijah pitching" src="assets/images/Pitching11.jpg"/></div></div></section>
 <section class="section-shell"><div class="section-heading"><div><span class="eyebrow">Evaluation details</span><h2>Baseball &amp; Academic Profile</h2></div></div><div class="profile-grid"><div class="profile-card"><h3>Pitching</h3><div class="data-list"><div class="data-row"><span>Fastball</span><strong>89 MPH — July 2026</strong></div><div class="data-row"><span>Pitch Metrics</span><strong>21.9 IVB / 2220 Spin</strong></div><div class="data-row"><span>Arsenal</span><strong>FB / 12–6 CB / SL / CH</strong></div><div class="data-row"><span>Spring 2026</span><strong>18.0 IP / 27K / 5BB / 68% strikes</strong></div><div class="data-row"><span>Spring 2025</span><strong>6–1 / 2.94 ERA / 1.020 WHIP</strong></div></div></div><div class="profile-card"><h3>Academics &amp; Tools</h3><div class="data-list"><div class="data-row"><span>GPA</span><strong>4.42 weighted / 3.91 unweighted</strong></div><div class="data-row"><span>SAT</span><strong>1370</strong></div><div class="data-row"><span>Exit Velocity</span><strong>93.9 MPH</strong></div><div class="data-row"><span>60 Yard</span><strong>7.0 seconds</strong></div><div class="data-row"><span>Recognition</span><strong>NHS / Academic All-Conference</strong></div></div></div><div class="profile-card honors-card">
 <h3>Academic Distinction, Leadership &amp; Service</h3>
 <p class="honors-intro">Sustained academic achievement and a multi-year record of service, character and leadership through the Young Men's Service League.</p>
@@ -394,7 +415,7 @@ Your browser does not support the video tag.
 Your browser does not support the video tag.
 </video>
 <div class="video-caption">Defensive Highlights – Summer 2026</div>
-</div><div class="video-item" data-category="pitching"><a class="screenshot-link" href="#pitching11"><img alt="Elijah Martin pitching" class="video-screenshot" loading="lazy" src="assets/images/Pitching11.jpg"/></a><div class="video-caption">Pitching – Summer 2026</div></div>
+</div>
 <div class="video-item" data-category="pitching">
 <video controls="">
 <source src="assets/images/pitchingadhs3.mp4" type="video/mp4"/>
@@ -563,7 +584,7 @@ Your browser does not support the video tag.
 </a>
 <div class="video-caption">Highest IVB</div>
 </div>
-<div class="lightbox" id="pitching11"><a aria-label="Close" class="lightbox-close" href="#videos"></a><img alt="Elijah Martin pitching enlarged" src="assets/images/Pitching11.jpg"/></div><div class="lightbox" id="shot-1">
+<div class="lightbox" id="shot-1">
 <a aria-label="Close" class="lightbox-close" href="#videos"></a>
 <img alt="ChangeUp IVB screenshot enlarged" src="assets/images/Number 1.jpg"/>
 </div>
