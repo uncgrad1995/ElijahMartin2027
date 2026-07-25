@@ -122,6 +122,36 @@ body{padding-top:58px}
  transform:scale(1.03);
  box-shadow:0 10px 24px rgba(0,0,0,.25);
 }
+
+/* Streaming-style media library */
+.video-shell{overflow:hidden}
+.video-filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px}
+.video-filters .media-anchor{text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.media-featured,.media-library{margin-top:8px}
+.media-row-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:0 0 14px}
+.media-row-heading h3{margin:0;font-size:clamp(1.25rem,2vw,1.7rem)}
+.media-row-heading p{margin:0;max-width:620px;color:var(--muted,#637083)}
+.featured-media-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:34px}
+.featured-media-card{position:relative;overflow:hidden;border-radius:16px;background:#fff;box-shadow:0 10px 28px rgba(15,30,50,.12);border:1px solid rgba(17,49,82,.1)}
+.featured-media-card iframe,.featured-media-card video{display:block;width:100%;aspect-ratio:16/9;background:#08131f;object-fit:cover}
+.featured-media-card .video-caption,.featured-media-copy h3{font-weight:800;font-size:1.08rem;margin:0;padding:15px 16px 4px}
+.featured-subtitle,.featured-media-copy p,.featured-meta{padding:0 16px 15px;color:var(--muted,#637083);font-size:.92rem}
+.featured-media-copy h3{padding-bottom:4px}
+.featured-media-copy p{margin:0;padding-bottom:5px}
+.featured-meta{font-size:.84rem}
+.featured-primary{grid-column:span 2}
+.featured-primary .featured-player{position:relative}
+.featured-primary video{aspect-ratio:21/9}
+.media-badge{position:absolute;top:14px;left:14px;background:#f4b942;color:#102a43;font-weight:900;font-size:.75rem;letter-spacing:.05em;padding:7px 10px;border-radius:999px;box-shadow:0 5px 15px rgba(0,0,0,.2)}
+.media-row{margin:0 0 34px;scroll-margin-top:120px}
+.media-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.media-tile{overflow:hidden;border-radius:14px;background:#fff;border:1px solid rgba(17,49,82,.1);box-shadow:0 7px 20px rgba(15,30,50,.09);transition:transform .2s ease,box-shadow .2s ease}
+.media-tile:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(15,30,50,.15)}
+.media-tile video,.media-tile iframe,.media-tile .video-screenshot{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#08131f}
+.media-tile .video-caption{padding:11px 12px 13px;font-weight:700;font-size:.9rem;line-height:1.3}
+#featured-videos{scroll-margin-top:120px}
+@media(max-width:900px){.media-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.featured-media-grid{grid-template-columns:1fr}.featured-primary{grid-column:auto}.featured-primary video{aspect-ratio:16/9}.media-row-heading{display:block}.media-row-heading p{margin-top:5px}}
+@media(max-width:560px){.media-strip{grid-template-columns:1fr}.featured-media-grid{gap:14px}.video-filters{gap:7px}.video-filters .media-anchor{font-size:.82rem;padding:8px 10px}}
 </style>
 </head>
 <body id="top">
@@ -198,7 +228,7 @@ body{padding-top:58px}
 </div>
 </section>
 <main>
-<section class="section-shell" id="profile"><div class="section-heading"><div><span class="eyebrow">Player profile</span><h2>Competitive. Academic. Versatile.</h2><p>Elijah's production, leadership and baseball IQ consistently show up in game settings.</p></div></div><div class="story-grid"><div class="story-card"><p>Elijah Martin is a two-way player known for leadership, a strong bat, defensive versatility, reliability and consistent pitching. His on-field results regularly outpace showcase metrics. He thrives on competition, respects the game and combines athleticism with a high baseball IQ. Elijah is also a strong student seeking a college where he can compete at a high level while earning a degree that prepares him for life beyond baseball.</p><div class="value-grid"><div class="value-card"><i class="fa-solid fa-baseball"></i><h3>Starter Profile</h3><p>Four-pitch mix, strike thrower and proven game performer.</p></div><div class="value-card"><i class="fa-solid fa-arrows-rotate"></i><h3>Two-Way Value</h3><p>RHP with experience at shortstop and third base.</p></div><div class="value-card"><i class="fa-solid fa-graduation-cap"></i><h3>High Academic</h3><p>4.42 weighted GPA, 3.91 unweighted GPA and 1370 SAT.</p></div><div class="value-card"><i class="fa-solid fa-people-group"></i><h3>Leadership</h3><p>NHS member and Young Men's Service League chapter president.</p></div><div class="value-card"><i class="fa-solid fa-chart-line"></i><h3>Projection</h3><p>Velocity and physical development continue to trend upward.</p></div><div class="value-card"><i class="fa-solid fa-shield-heart"></i><h3>Team First</h3><p>Coachable, dependable and comfortable in competitive environments.</p></div></div></div><div class="photo-collage"><img alt="Elijah pitching" src="assets/images/Elijah Pitching.jpg"/><img alt="Elijah playing third base" src="assets/images/Elijah 3B.jpg"/><img alt="Elijah at Cooperstown" src="assets/images/Cooperstown-1.jpg"/><img alt="Elijah pitching" src="assets/images/Pitching11.JPG"/></div></div></section>
+<section class="section-shell" id="profile"><div class="section-heading"><div><span class="eyebrow">Player profile</span><h2>Competitive. Academic. Versatile.</h2><p>Elijah's production, leadership and baseball IQ consistently show up in game settings.</p></div></div><div class="story-grid"><div class="story-card"><p>Elijah Martin is a two-way player known for leadership, a strong bat, defensive versatility, reliability and consistent pitching. His on-field results regularly outpace showcase metrics. He thrives on competition, respects the game and combines athleticism with a high baseball IQ. Elijah is also a strong student seeking a college where he can compete at a high level while earning a degree that prepares him for life beyond baseball.</p><div class="value-grid"><div class="value-card"><i class="fa-solid fa-baseball"></i><h3>Starter Profile</h3><p>Four-pitch mix, strike thrower and proven game performer.</p></div><div class="value-card"><i class="fa-solid fa-arrows-rotate"></i><h3>Two-Way Value</h3><p>RHP with experience at shortstop and third base.</p></div><div class="value-card"><i class="fa-solid fa-graduation-cap"></i><h3>High Academic</h3><p>4.42 weighted GPA, 3.91 unweighted GPA and 1370 SAT.</p></div><div class="value-card"><i class="fa-solid fa-people-group"></i><h3>Leadership</h3><p>NHS member and Young Men's Service League chapter president.</p></div><div class="value-card"><i class="fa-solid fa-chart-line"></i><h3>Projection</h3><p>Velocity and physical development continue to trend upward.</p></div><div class="value-card"><i class="fa-solid fa-shield-heart"></i><h3>Team First</h3><p>Coachable, dependable and comfortable in competitive environments.</p></div></div></div><div class="photo-collage"><img alt="Elijah pitching" src="assets/images/Elijah Pitching.jpg"/><img alt="Elijah playing third base" src="assets/images/Elijah 3B.jpg"/><img alt="Elijah at Cooperstown" src="assets/images/Cooperstown-1.jpg"/><img alt="Elijah pitching" src="assets/images/Pitching11.jpg"/></div></div></section>
 <section class="section-shell"><div class="section-heading"><div><span class="eyebrow">Evaluation details</span><h2>Baseball &amp; Academic Profile</h2></div></div><div class="profile-grid"><div class="profile-card"><h3>Pitching</h3><div class="data-list"><div class="data-row"><span>Fastball</span><strong>89 MPH — July 2026</strong></div><div class="data-row"><span>Pitch Metrics</span><strong>21.9 IVB / 2220 Spin</strong></div><div class="data-row"><span>Arsenal</span><strong>FB / 12–6 CB / SL / CH</strong></div><div class="data-row"><span>Spring 2026</span><strong>18.0 IP / 27K / 5BB / 68% strikes</strong></div><div class="data-row"><span>Spring 2025</span><strong>6–1 / 2.94 ERA / 1.020 WHIP</strong></div></div></div><div class="profile-card"><h3>Academics &amp; Tools</h3><div class="data-list"><div class="data-row"><span>GPA</span><strong>4.42 weighted / 3.91 unweighted</strong></div><div class="data-row"><span>SAT</span><strong>1370</strong></div><div class="data-row"><span>Exit Velocity</span><strong>93.9 MPH</strong></div><div class="data-row"><span>60 Yard</span><strong>7.0 seconds</strong></div><div class="data-row"><span>Recognition</span><strong>NHS / Academic All-Conference</strong></div></div></div><div class="profile-card honors-card">
 <h3>Academic Distinction, Leadership &amp; Service</h3>
 <p class="honors-intro">Sustained academic achievement and a multi-year record of service, character and leadership through the Young Men's Service League.</p>
@@ -382,248 +412,204 @@ body{padding-top:58px}
 </div>
 </section>
 <section class="section-shell video-shell" id="videos">
-<div class="section-heading"><div><span class="eyebrow">Video library</span><h2>See Elijah Compete</h2><p>Featured recruiting video, game action, pitching, hitting, running and development clips.</p></div></div>
-<div aria-label="Filter videos" class="video-filters">
-<button class="filter-button active" data-filter="all">All</button>
-<button class="filter-button" data-filter="pitching">Pitching</button>
-<button class="filter-button" data-filter="hitting">Hitting</button>
-<button class="filter-button" data-filter="fielding">Fielding</button>
-<button class="filter-button" data-filter="training">Training &amp; Metrics</button>
-</div>
-<div class="video-grid">
-<div class="video-item" data-category="training">
+<div class="section-heading"><div><span class="eyebrow">Video library</span><h2>See Elijah Compete</h2><p>Featured recruiting footage first, followed by organized pitching, hitting, fielding and development libraries.</p></div></div>
+<div aria-label="Filter videos" class="video-filters"><a class="filter-button media-anchor" href="#featured-videos">Featured</a><a class="filter-button media-anchor" href="#pitching-videos">Pitching</a><a class="filter-button media-anchor" href="#hitting-videos">Hitting</a><a class="filter-button media-anchor" href="#fielding-videos">Fielding</a><a class="filter-button media-anchor" href="#training-videos">Training &amp; Metrics</a></div>
+<div class="media-featured" id="featured-videos"><div class="media-row-heading"><h3>Featured Recruiting Videos</h3><p>Start here for Elijah’s newest and most complete recruiting footage.</p></div><div class="featured-media-grid"><div class="featured-media-card" data-category="featured">
 <iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/caLVxWlcKEI" title="2026 Recruiting Video"></iframe>
-<div class="video-caption">2026 Recruiting Video</div>
-</div>
-<div class="video-item" data-category="pitching">
+<div class="video-caption">2026 Recruiting Video</div><div class="featured-subtitle">Complete recruiting overview</div>
+</div><article class="featured-media-card featured-primary" data-category="featured"><div class="featured-player"><video controls="" playsinline="" preload="metadata"><source src="assets/images/ElijahBoston.mp4" type="video/mp4"/></video><span class="media-badge">NEW • FEATURED</span></div><div class="featured-media-copy"><h3>Boston Classic Highlights</h3><p>Prospect Select Boston Classic • July 2026</p><div class="featured-meta">Recent tournament performance • Pitching and game action</div></div></article><div class="featured-media-card" data-category="featured">
 <video controls="" preload="metadata">
 <source src="assets/images/Pitching4.mp4" type="video/mp4"/>
 Your browser does not support the video tag.
 </video>
-<div class="video-caption">Pitching – Summer 2026 (89 MPH)</div>
-</div><div class="video-item" data-category="pitching"><video controls="True" preload="metadata"><source src="assets/images/Pitching0.mp4" type="video/mp4"/></video><div class="video-caption">Pitching – Complete Outing</div></div>
-<div class="video-item" data-category="hitting">
-<video controls="" preload="metadata">
-<source src="assets/images/Hitting1.mp4" type="video/mp4"/>
-Your browser does not support the video tag.
-</video>
-<div class="video-caption">Hitting Highlights – Summer 2026</div>
-</div>
-<div class="video-item" data-category="fielding">
-<video controls="" preload="metadata">
-<source src="assets/images/Fielding1.mp4" type="video/mp4"/>
-Your browser does not support the video tag.
-</video>
-<div class="video-caption">Defensive Highlights – Summer 2026</div>
-</div>
-<div class="video-item" data-category="pitching">
+<div class="video-caption">Pitching – Summer 2026 (89 MPH)</div><div class="featured-subtitle">Pitching highlights • 89 MPH</div>
+</div><div class="featured-media-card" data-category="featured"><video controls="True" preload="metadata"><source src="assets/images/Pitching0.mp4" type="video/mp4"/></video><div class="video-caption">Pitching – Complete Outing</div><div class="featured-subtitle">Complete pitching outing</div></div></div></div><div class="media-library"><section class="media-row" data-category-section="pitching" id="pitching-videos"><div class="media-row-heading"><h3>Pitching</h3><p>Game outings, bullpen work and pitch metrics.</p></div><div class="media-strip"><div class="video-item media-tile" data-category="pitching">
 <video controls="">
 <source src="assets/images/pitchingadhs3.mp4" type="video/mp4"/>
         Your browser does not support the video tag.
       </video>
 <div class="video-caption">vs ADHS (W, 5IP, 9K, 2BB)</div>
-</div>
-<div class="video-item" data-category="hitting">
-<video controls="" preload="metadata">
-<source src="assets/images/Triple-to-LF.mp4" type="video/mp4"/>
-</video>
-<div class="video-caption">Triple to LF</div>
-</div>
-<div class="video-item" data-category="hitting">
-<video controls="" preload="metadata">
-<source src="assets/images/Double-to-LF.mp4" type="video/mp4"/>
-</video>
-<div class="video-caption">Double to LF</div>
-</div>
-<div class="video-item" data-category="pitching">
+</div><div class="video-item media-tile" data-category="pitching">
 <video controls="" preload="metadata">
 <source src="assets/images/Have-a-seat.mp4" type="video/mp4"/>
 </video>
 <div class="video-caption">Pitching - Spring 2026 (27K / 5BB)</div>
-</div>
-<div class="video-item" data-category="pitching">
+</div><div class="video-item media-tile" data-category="pitching">
 <video controls="">
 <source src="assets/images/PBR_Pitching_February_2026_small.mp4" type="video/mp4"/>
         Your browser does not support the video tag.
       </video>
 <div class="video-caption">Pitching - PBR All-State February 2026</div>
-</div>
-<div class="video-item" data-category="fielding">
-<video controls="">
-<source src="assets/images/PBR - Fielding October 2025.mp4" type="video/mp4"/>
-        Your browser does not support the video tag.
-      </video>
-<div class="video-caption">Fielding - October 2025</div>
-</div>
-<div class="video-item" data-category="hitting">
-<video controls="">
-<source src="assets/images/PBR - Hitting October 2025.mp4" type="video/mp4"/>
-        Your browser does not support the video tag.
-      </video>
-<div class="video-caption">Hitting - October 2025</div>
-</div>
-<div class="video-item" data-category="hitting">
-<video controls="">
-<source src="assets/images/Swing.mp4" type="video/mp4"/>
-        Your browser does not support the video tag.
-      </video>
-<div class="video-caption">In the Zone</div>
-</div>
-<div class="video-item" data-category="pitching">
+</div><div class="video-item media-tile" data-category="pitching">
 <video controls="">
 <source src="assets/images/PBR - Pitching October 2025.mp4" type="video/mp4"/>
         Your browser does not support the video tag.
       </video>
 <div class="video-caption">Pitching - October 2025</div>
-</div>
-<div class="video-item" data-category="training">
-<video controls="">
-<source src="assets/images/PBR Running October 2025 (7.3).mp4" type="video/mp4"/>
-        Your browser does not support the video tag.
-      </video>
-<div class="video-caption">60 Yard Dash - October 2025</div>
-</div>
-<div class="video-item" data-category="hitting">
-<video controls="">
-<source src="assets/images/PG Double taking Third.mp4" type="video/mp4"/>
-        Your browser does not support the video tag.
-      </video>
-<div class="video-caption">Double with Heads-Up Baserunning</div>
-</div>
-<div class="video-item" data-category="hitting">
-<video controls="">
-<source src="assets/images/Elijah Deep Drive with Wood.mp4" type="video/mp4"/>
-        Your browser does not support the video tag.
-      </video>
-<div class="video-caption">375' Drive to Center with Wood</div>
-</div>
-<div class="video-item" data-category="hitting">
-<video controls="">
-<source src="assets/images/PG Single CF.mp4" type="video/mp4"/>
-        Your browser does not support the video tag.
-      </video>
-<div class="video-caption">Base Hit Up the Middle</div>
-</div>
-<div class="video-item" data-category="hitting">
-<video controls="">
-<source src="assets/images/Elijah Gapper to Wall in RCF.mp4" type="video/mp4"/>
-        Your browser does not support the video tag.
-      </video>
-<div class="video-caption">Double with 2 RBI</div>
-</div>
-<div class="video-item" data-category="hitting">
-<video controls="">
-<source src="assets/images/Elijah Double 2 RBI - Low Res.mp4" type="video/mp4"/>
-        Your browser does not support the video tag.
-      </video>
-<div class="video-caption">Another 2 RBI Double</div>
-</div>
-<div class="video-item" data-category="hitting">
-<video controls="">
-<source src="assets/images/Elijah line drive single.mp4" type="video/mp4"/>
-        Your browser does not support the video tag.
-      </video>
-<div class="video-caption">Line Drive Single</div>
-</div>
-<div class="video-item" data-category="pitching">
+</div><div class="video-item media-tile" data-category="pitching">
 <video controls="">
 <source src="assets/images/Bullpen 857.mp4" type="video/mp4"/>
         Your browser does not support the video tag.
       </video>
 <div class="video-caption">New Bullpen PR</div>
-</div>
-<div class="video-item" data-category="training">
+</div><div class="video-item media-tile" data-category="pitching">
+<a class="screenshot-link" href="#shot-1">
+<img alt="ChangeUp IVB screenshot" class="video-screenshot" loading="lazy" src="assets/images/Number 1.jpg"/>
+</a>
+<div class="video-caption">ChangeUp IVB</div>
+</div><div class="video-item media-tile" data-category="pitching">
+<a class="screenshot-link" href="#shot-2">
+<img alt="Horizontal Movement screenshot" class="video-screenshot" loading="lazy" src="assets/images/Number 2.jpg"/>
+</a>
+<div class="video-caption">Horizontal Movement</div>
+</div><div class="video-item media-tile" data-category="pitching">
+<a class="screenshot-link" href="#shot-3">
+<img alt="Highest Spin Rate screenshot" class="video-screenshot" loading="lazy" src="assets/images/Number 3.jpg"/>
+</a>
+<div class="video-caption">Highest Spin Rate</div>
+</div><div class="video-item media-tile" data-category="pitching">
+<a class="screenshot-link" href="#shot-4">
+<img alt="Highest IVB screenshot" class="video-screenshot" loading="lazy" src="assets/images/Number 4.jpg"/>
+</a>
+<div class="video-caption">Highest IVB</div>
+</div></div></section><section class="media-row" data-category-section="hitting" id="hitting-videos"><div class="media-row-heading"><h3>Hitting</h3><p>Recent swings, extra-base hits and game at-bats.</p></div><div class="media-strip"><div class="video-item media-tile" data-category="hitting">
+<video controls="" preload="metadata">
+<source src="assets/images/Hitting1.mp4" type="video/mp4"/>
+Your browser does not support the video tag.
+</video>
+<div class="video-caption">Hitting Highlights – Summer 2026</div>
+</div><div class="video-item media-tile" data-category="hitting">
+<video controls="" preload="metadata">
+<source src="assets/images/Triple-to-LF.mp4" type="video/mp4"/>
+</video>
+<div class="video-caption">Triple to LF</div>
+</div><div class="video-item media-tile" data-category="hitting">
+<video controls="" preload="metadata">
+<source src="assets/images/Double-to-LF.mp4" type="video/mp4"/>
+</video>
+<div class="video-caption">Double to LF</div>
+</div><div class="video-item media-tile" data-category="hitting">
+<video controls="">
+<source src="assets/images/PBR - Hitting October 2025.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+      </video>
+<div class="video-caption">Hitting - October 2025</div>
+</div><div class="video-item media-tile" data-category="hitting">
+<video controls="">
+<source src="assets/images/Swing.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+      </video>
+<div class="video-caption">In the Zone</div>
+</div><div class="video-item media-tile" data-category="hitting">
+<video controls="">
+<source src="assets/images/PG Double taking Third.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+      </video>
+<div class="video-caption">Double with Heads-Up Baserunning</div>
+</div><div class="video-item media-tile" data-category="hitting">
+<video controls="">
+<source src="assets/images/Elijah Deep Drive with Wood.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+      </video>
+<div class="video-caption">375' Drive to Center with Wood</div>
+</div><div class="video-item media-tile" data-category="hitting">
+<video controls="">
+<source src="assets/images/PG Single CF.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+      </video>
+<div class="video-caption">Base Hit Up the Middle</div>
+</div><div class="video-item media-tile" data-category="hitting">
+<video controls="">
+<source src="assets/images/Elijah Gapper to Wall in RCF.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+      </video>
+<div class="video-caption">Double with 2 RBI</div>
+</div><div class="video-item media-tile" data-category="hitting">
+<video controls="">
+<source src="assets/images/Elijah Double 2 RBI - Low Res.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+      </video>
+<div class="video-caption">Another 2 RBI Double</div>
+</div><div class="video-item media-tile" data-category="hitting">
+<video controls="">
+<source src="assets/images/Elijah line drive single.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+      </video>
+<div class="video-caption">Line Drive Single</div>
+</div></div></section><section class="media-row" data-category-section="fielding" id="fielding-videos"><div class="media-row-heading"><h3>Fielding</h3><p>Infield actions and defensive evaluations.</p></div><div class="media-strip"><div class="video-item media-tile" data-category="fielding">
+<video controls="" preload="metadata">
+<source src="assets/images/Fielding1.mp4" type="video/mp4"/>
+Your browser does not support the video tag.
+</video>
+<div class="video-caption">Defensive Highlights – Summer 2026</div>
+</div><div class="video-item media-tile" data-category="fielding">
+<video controls="">
+<source src="assets/images/PBR - Fielding October 2025.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+      </video>
+<div class="video-caption">Fielding - October 2025</div>
+</div></div></section><section class="media-row" data-category-section="training" id="training-videos"><div class="media-row-heading"><h3>Training &amp; Metrics</h3><p>Running, workouts, social highlights and development clips.</p></div><div class="media-strip"><div class="video-item media-tile" data-category="training">
+<video controls="">
+<source src="assets/images/PBR Running October 2025 (7.3).mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+      </video>
+<div class="video-caption">60 Yard Dash - October 2025</div>
+</div><div class="video-item media-tile" data-category="training">
 <video controls="">
 <source src="assets/images/IMG_0334.mp4" type="video/mp4"/>
         Your browser does not support the video tag.
       </video>
 <div class="video-caption">Getting Better Every Day</div>
-</div>
-<div class="video-item" data-category="training">
+</div><div class="video-item media-tile" data-category="training">
 <video controls="">
 <source src="assets/images/Winter Workouts.mp4" type="video/mp4"/>
         Your browser does not support the video tag.
       </video>
 <div class="video-caption">Winter Workouts</div>
-</div>
-<div class="video-item" data-category="training">
+</div><div class="video-item media-tile" data-category="training">
 <video controls="">
 <source src="assets/images/IMG_1975.mp4" type="video/mp4"/>
         Your browser does not support the video tag.
       </video>
 <div class="video-caption">Winter Workouts</div>
-</div>
-<div class="video-item" data-category="training">
+</div><div class="video-item media-tile" data-category="training">
 <video controls="">
 <source src="assets/images/IMG_1976.mp4" type="video/mp4"/>
         Your browser does not support the video tag.
       </video>
 <div class="video-caption">Winter Workouts</div>
-</div>
-<div class="video-item" data-category="pitching">
-<a class="screenshot-link" href="#shot-1">
-<img alt="ChangeUp IVB screenshot" class="video-screenshot" loading="lazy" src="assets/images/Number 1.jpg"/>
-</a>
-<div class="video-caption">ChangeUp IVB</div>
-</div>
-<div class="video-item" data-category="pitching">
-<a class="screenshot-link" href="#shot-2">
-<img alt="Horizontal Movement screenshot" class="video-screenshot" loading="lazy" src="assets/images/Number 2.jpg"/>
-</a>
-<div class="video-caption">Horizontal Movement</div>
-</div>
-<div class="video-item" data-category="pitching">
-<a class="screenshot-link" href="#shot-3">
-<img alt="Highest Spin Rate screenshot" class="video-screenshot" loading="lazy" src="assets/images/Number 3.jpg"/>
-</a>
-<div class="video-caption">Highest Spin Rate</div>
-</div>
-<div class="video-item" data-category="pitching">
-<a class="screenshot-link" href="#shot-4">
-<img alt="Highest IVB screenshot" class="video-screenshot" loading="lazy" src="assets/images/Number 4.jpg"/>
-</a>
-<div class="video-caption">Highest IVB</div>
-</div>
-<div class="lightbox" id="shot-1">
-<a aria-label="Close" class="lightbox-close" href="#videos"></a>
-<img alt="ChangeUp IVB screenshot enlarged" src="assets/images/Number 1.jpg"/>
-</div>
-<div class="lightbox" id="shot-2">
-<a aria-label="Close" class="lightbox-close" href="#videos"></a>
-<img alt="Horizontal Movement screenshot enlarged" src="assets/images/Number 2.jpg"/>
-</div>
-<div class="lightbox" id="shot-3">
-<a aria-label="Close" class="lightbox-close" href="#videos"></a>
-<img alt="Highest Spin Rate screenshot enlarged" src="assets/images/Number 3.jpg"/>
-</div>
-<div class="lightbox" id="shot-4">
-<a aria-label="Close" class="lightbox-close" href="#videos"></a>
-<img alt="Highest IVB screenshot enlarged" src="assets/images/Number 4.jpg"/>
-</div>
-<div class="video-item twitter-container" data-category="training">
+</div><div class="video-item media-tile" data-category="training">
 <blockquote class="twitter-tweet">
 <a href="https://twitter.com/ElijahM182009/status/2020941179442036927"></a>
 </blockquote>
 <div class="video-caption">Twitter Highlight</div>
-</div>
-<div class="video-item twitter-container" data-category="training">
+</div><div class="video-item media-tile" data-category="training">
 <blockquote class="twitter-tweet">
 <a href="https://twitter.com/ElijahM182009/status/1953528986262282684"></a>
 </blockquote>
 <div class="video-caption">Twitter Highlight</div>
-</div>
-<div class="video-item twitter-container" data-category="training">
+</div><div class="video-item media-tile" data-category="training">
 <blockquote class="twitter-tweet">
 <a href="https://twitter.com/ElijahM182009/status/2007169656210239871"></a>
 </blockquote>
 <div class="video-caption">Twitter Highlight</div>
-</div>
-<div class="video-item twitter-container" data-category="training">
+</div><div class="video-item media-tile" data-category="training">
 <blockquote class="twitter-tweet">
 <a href="https://twitter.com/ElijahM182009/status/1995517813663125568"></a>
 </blockquote>
 <div class="video-caption">Twitter Highlight</div>
-</div>
+</div></div></section></div><div class="lightbox" id="shot-4">
+<a aria-label="Close" class="lightbox-close" href="#videos"></a>
+<img alt="Highest IVB screenshot enlarged" src="assets/images/Number 4.jpg"/>
+</div><div class="lightbox" id="shot-3">
+<a aria-label="Close" class="lightbox-close" href="#videos"></a>
+<img alt="Highest Spin Rate screenshot enlarged" src="assets/images/Number 3.jpg"/>
+</div><div class="lightbox" id="shot-2">
+<a aria-label="Close" class="lightbox-close" href="#videos"></a>
+<img alt="Horizontal Movement screenshot enlarged" src="assets/images/Number 2.jpg"/>
+</div><div class="lightbox" id="shot-1">
+<a aria-label="Close" class="lightbox-close" href="#videos"></a>
+<img alt="ChangeUp IVB screenshot enlarged" src="assets/images/Number 1.jpg"/>
 </div>
 </section>
 <section class="section-shell" id="references"><div class="section-heading"><div><span class="eyebrow">Trusted evaluators</span><h2>Baseball References</h2><p>Coaches and mentors available to discuss Elijah's ability, character and development.</p></div></div><div class="references-grid"><article class="contact-card-v2"><span class="role">High School Coach</span><h3>Justin Reitz</h3><p>Green Hope High School — 8A</p><div class="contact-details"><a href="mailto:jreitz@wcpss.net"><i class="fa-solid fa-envelope"></i><span>jreitz@wcpss.net</span></a><a href="tel:+13034727603"><i class="fa-solid fa-phone"></i><span>(303) 472-7603</span></a></div></article><article class="contact-card-v2"><span class="role">Club Team Coach</span><h3>Cory Scott</h3><p>SBA Coastal National</p><div class="contact-details"><a href="mailto:cory.scott@movementbank.com"><i class="fa-solid fa-envelope"></i><span>cory.scott@movementbank.com</span></a><a href="tel:+12523785252"><i class="fa-solid fa-phone"></i><span>(252) 378-5252</span></a></div></article><article class="contact-card-v2"><span class="role">MLB Scout • Mentor</span><h3>Sean McNally</h3><p>Pittsburgh Pirates</p><div class="contact-details"><a href="mailto:smcnally1214@gmail.com"><i class="fa-solid fa-envelope"></i><span>smcnally1214@gmail.com</span></a><a href="tel:+19198128022"><i class="fa-solid fa-phone"></i><span>(919) 812-8022</span></a></div></article></div></section>
