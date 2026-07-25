@@ -152,6 +152,195 @@ body{padding-top:58px}
 #featured-videos{scroll-margin-top:120px}
 @media(max-width:900px){.media-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.featured-media-grid{grid-template-columns:1fr}.featured-primary{grid-column:auto}.featured-primary video{aspect-ratio:16/9}.media-row-heading{display:block}.media-row-heading p{margin-top:5px}}
 @media(max-width:560px){.media-strip{grid-template-columns:1fr}.featured-media-grid{gap:14px}.video-filters{gap:7px}.video-filters .media-anchor{font-size:.82rem;padding:8px 10px}}
+
+/* === Pitcher-first homepage redesign === */
+.hero{
+  position:relative;
+  min-height:78vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#071b12;
+}
+.hero-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(180deg,rgba(3,17,10,.48),rgba(3,17,10,.72)),
+    linear-gradient(90deg,rgba(3,17,10,.35),rgba(3,17,10,.08));
+}
+.hero .hero-content,
+.hero .container{
+  position:relative;
+  z-index:2;
+}
+.hero .eyebrow{
+  display:inline-block;
+  margin-bottom:12px;
+  padding:7px 12px;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:999px;
+  color:#fff;
+  background:rgba(0,0,0,.24);
+  backdrop-filter:blur(5px);
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.hero h1,
+.hero h2,
+.hero p{
+  color:#fff;
+  text-shadow:0 2px 10px rgba(0,0,0,.45);
+}
+.hero .hero-position{
+  font-size:clamp(1.15rem,2.5vw,1.65rem);
+  font-weight:800;
+  letter-spacing:.08em;
+  margin:.3rem 0 .65rem;
+}
+.hero .hero-meta{
+  font-size:clamp(.98rem,2vw,1.15rem);
+  font-weight:600;
+}
+.hero .hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+  margin-top:22px;
+}
+.hero .hero-actions a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:155px;
+  padding:12px 18px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:800;
+}
+.hero .hero-actions a:first-child{
+  background:#fff;
+  color:#0b3b27;
+}
+.hero .hero-actions a:not(:first-child){
+  color:#fff;
+  border:1px solid rgba(255,255,255,.65);
+  background:rgba(0,0,0,.18);
+}
+.photo-collage{
+  display:grid;
+  grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);
+  grid-template-rows:repeat(3,150px);
+  gap:12px;
+  max-width:900px;
+  margin:0 auto;
+}
+.photo-collage img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:14px;
+  box-shadow:0 8px 22px rgba(0,0,0,.18);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.photo-collage img:hover{
+  transform:scale(1.015);
+  box-shadow:0 12px 28px rgba(0,0,0,.24);
+}
+.photo-collage img.pitching-hero{
+  grid-column:1;
+  grid-row:1 / span 3;
+}
+.photo-collage img:not(.pitching-hero){
+  grid-column:2;
+}
+.pitcher-first-note{
+  text-align:center;
+  margin:0 auto 26px;
+  max-width:820px;
+  font-weight:700;
+}
+@media(max-width:760px){
+  .hero{min-height:68vh;}
+  .photo-collage{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:280px 150px;
+  }
+  .photo-collage img.pitching-hero{
+    grid-column:1 / span 2;
+    grid-row:1;
+  }
+  .photo-collage img:not(.pitching-hero){
+    grid-column:auto;
+    grid-row:2;
+  }
+  .photo-collage img:not(.pitching-hero):nth-of-type(n+4){
+    display:none;
+  }
+}
+
+/* Hero-v2 video treatment */
+.hero-v2{
+  position:relative;
+  min-height:78vh;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  background:#071b12;
+}
+.hero-v2 .hero-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+}
+.hero-v2::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(180deg,rgba(3,17,10,.45),rgba(3,17,10,.76)),
+    linear-gradient(90deg,rgba(3,17,10,.45),rgba(3,17,10,.15));
+}
+.hero-v2 .hero-inner{
+  position:relative;
+  z-index:2;
+  width:100%;
+}
+.hero-v2 .hero-copy,
+.hero-v2 .quick-card{
+  position:relative;
+  z-index:2;
+}
+.hero-v2 .hero-copy h1,
+.hero-v2 .hero-copy h1 span,
+.hero-v2 .hero-sub{
+  color:#fff;
+  text-shadow:0 2px 12px rgba(0,0,0,.5);
+}
+.hero-v2 .quick-card{
+  backdrop-filter:blur(8px);
+  background:rgba(255,255,255,.93);
+}
+@media(max-width:760px){
+  .hero-v2{min-height:auto;padding:72px 0 38px;}
+}
 </style>
 </head>
 <body id="top">
@@ -169,7 +358,7 @@ body{padding-top:58px}
 </div>
 </div>
 <nav class="site-nav"><div class="nav-inner"><a class="brand" href="#top"><span class="brand-mark">EM</span><span class="brand-copy"><strong>Elijah Martin</strong><span>2027 Baseball Recruiting</span></span></a><button aria-label="Open navigation" class="menu-toggle"><i class="fa-solid fa-bars"></i></button><div class="nav-links"><a href="#profile">Profile</a><a href="#schedule">Schedule</a><a href="#videos">Video</a><a href="#references">References</a><a class="nav-cta" href="#contact">Contact</a></div></div></nav>
-<header class="hero-v2"><div class="hero-inner"><div class="hero-copy"><span class="status-pill"><span class="status-dot"></span>Uncommitted • Class of 2027</span><h1>Elijah<br/>Martin<span>RHP • SS • 3B</span></h1><p class="hero-sub">6'1" right-handed pitcher and infielder from Green Hope High School in Cary, North Carolina. High-academic, competitive, versatile and continuing to trend upward.</p><div class="hero-actions"><a class="btn btn-primary" href="#videos"><i class="fa-solid fa-play"></i> Watch Recruiting Video</a><a class="btn btn-secondary" href="mailto:elijahlukemartin@gmail.com"><i class="fa-solid fa-envelope"></i> Email Elijah</a><a aria-label="Call Elijah at 919-519-1250" class="btn btn-secondary" href="tel:+19195191250" title="919-519-1250"><i class="fa-solid fa-phone"></i> Call Elijah</a></div></div><aside class="quick-card"><div class="quick-card-title"><span>Coach's Quick Look</span><em>R / R</em></div>
+<header class="hero-v2"><video aria-hidden="true" autoplay="" class="hero-video" loop="" muted="" playsinline="" poster="assets/images/Pitching11.JPG" preload="metadata"><source src="assets/images/ElijahBoston.mp4" type="video/mp4"/></video><div class="hero-inner"><div class="hero-copy"><span class="status-pill"><span class="status-dot"></span>Uncommitted • Class of 2027 • Pitcher First</span><h1>Elijah<br/>Martin<span>RHP • SS • 3B</span></h1><p class="hero-sub">6'1" right-handed pitcher and infielder from Green Hope High School in Cary, North Carolina. High-academic, competitive, versatile and continuing to trend upward.</p><div class="hero-actions"><a class="btn btn-primary" href="#videos"><i class="fa-solid fa-play"></i> Watch Recruiting Video</a><a class="btn btn-secondary" href="mailto:elijahlukemartin@gmail.com"><i class="fa-solid fa-envelope"></i> Email Elijah</a><a aria-label="Call Elijah at 919-519-1250" class="btn btn-secondary" href="tel:+19195191250" title="919-519-1250"><i class="fa-solid fa-phone"></i> Call Elijah</a></div></div><aside class="quick-card"><div class="quick-card-title"><span>Coach's Quick Look</span><em>R / R</em></div>
 <div class="quick-groups">
 <div class="quick-group">
 <span class="quick-group-label">Physical</span>
@@ -228,7 +417,7 @@ body{padding-top:58px}
 </div>
 </section>
 <main>
-<section class="section-shell" id="profile"><div class="section-heading"><div><span class="eyebrow">Player profile</span><h2>Competitive. Academic. Versatile.</h2><p>Elijah's production, leadership and baseball IQ consistently show up in game settings.</p></div></div><div class="story-grid"><div class="story-card"><p>Elijah Martin is a two-way player known for leadership, a strong bat, defensive versatility, reliability and consistent pitching. His on-field results regularly outpace showcase metrics. He thrives on competition, respects the game and combines athleticism with a high baseball IQ. Elijah is also a strong student seeking a college where he can compete at a high level while earning a degree that prepares him for life beyond baseball.</p><div class="value-grid"><div class="value-card"><i class="fa-solid fa-baseball"></i><h3>Starter Profile</h3><p>Four-pitch mix, strike thrower and proven game performer.</p></div><div class="value-card"><i class="fa-solid fa-arrows-rotate"></i><h3>Two-Way Value</h3><p>RHP with experience at shortstop and third base.</p></div><div class="value-card"><i class="fa-solid fa-graduation-cap"></i><h3>High Academic</h3><p>4.42 weighted GPA, 3.91 unweighted GPA and 1370 SAT.</p></div><div class="value-card"><i class="fa-solid fa-people-group"></i><h3>Leadership</h3><p>NHS member and Young Men's Service League chapter president.</p></div><div class="value-card"><i class="fa-solid fa-chart-line"></i><h3>Projection</h3><p>Velocity and physical development continue to trend upward.</p></div><div class="value-card"><i class="fa-solid fa-shield-heart"></i><h3>Team First</h3><p>Coachable, dependable and comfortable in competitive environments.</p></div></div></div><div class="photo-collage"><img alt="Elijah pitching" src="assets/images/Elijah Pitching.jpg"/><img alt="Elijah playing third base" src="assets/images/Elijah 3B.jpg"/><img alt="Elijah at Cooperstown" src="assets/images/Cooperstown-1.jpg"/><img alt="Elijah pitching" src="assets/images/Pitching11.jpg"/></div></div></section>
+<section class="section-shell" id="profile"><div class="section-heading"><div><span class="eyebrow">Player profile</span><h2>Competitive. Academic. Versatile.</h2><p>Elijah's production, leadership and baseball IQ consistently show up in game settings.</p></div></div><div class="story-grid"><div class="story-card"><p>Elijah Martin is a two-way player known for leadership, a strong bat, defensive versatility, reliability and consistent pitching. His on-field results regularly outpace showcase metrics. He thrives on competition, respects the game and combines athleticism with a high baseball IQ. Elijah is also a strong student seeking a college where he can compete at a high level while earning a degree that prepares him for life beyond baseball.</p><div class="value-grid"><div class="value-card"><i class="fa-solid fa-baseball"></i><h3>Starter Profile</h3><p>Four-pitch mix, strike thrower and proven game performer.</p></div><div class="value-card"><i class="fa-solid fa-arrows-rotate"></i><h3>Two-Way Value</h3><p>RHP with experience at shortstop and third base.</p></div><div class="value-card"><i class="fa-solid fa-graduation-cap"></i><h3>High Academic</h3><p>4.42 weighted GPA, 3.91 unweighted GPA and 1370 SAT.</p></div><div class="value-card"><i class="fa-solid fa-people-group"></i><h3>Leadership</h3><p>NHS member and Young Men's Service League chapter president.</p></div><div class="value-card"><i class="fa-solid fa-chart-line"></i><h3>Projection</h3><p>Velocity and physical development continue to trend upward.</p></div><div class="value-card"><i class="fa-solid fa-shield-heart"></i><h3>Team First</h3><p>Coachable, dependable and comfortable in competitive environments.</p></div></div></div><div class="photo-collage"><img alt="Elijah Martin pitching" class="pitching-hero" src="assets/images/Pitching11.JPG"/><img alt="Elijah pitching" src="assets/images/Elijah Pitching.jpg"/><img alt="Elijah playing third base" src="assets/images/Elijah 3B.jpg"/><img alt="Elijah at Cooperstown" src="assets/images/Cooperstown-1.jpg"/></div></div></section>
 <section class="section-shell"><div class="section-heading"><div><span class="eyebrow">Evaluation details</span><h2>Baseball &amp; Academic Profile</h2></div></div><div class="profile-grid"><div class="profile-card"><h3>Pitching</h3><div class="data-list"><div class="data-row"><span>Fastball</span><strong>89 MPH — July 2026</strong></div><div class="data-row"><span>Pitch Metrics</span><strong>21.9 IVB / 2220 Spin</strong></div><div class="data-row"><span>Arsenal</span><strong>FB / 12–6 CB / SL / CH</strong></div><div class="data-row"><span>Spring 2026</span><strong>18.0 IP / 27K / 5BB / 68% strikes</strong></div><div class="data-row"><span>Spring 2025</span><strong>6–1 / 2.94 ERA / 1.020 WHIP</strong></div></div></div><div class="profile-card"><h3>Academics &amp; Tools</h3><div class="data-list"><div class="data-row"><span>GPA</span><strong>4.42 weighted / 3.91 unweighted</strong></div><div class="data-row"><span>SAT</span><strong>1370</strong></div><div class="data-row"><span>Exit Velocity</span><strong>93.9 MPH</strong></div><div class="data-row"><span>60 Yard</span><strong>7.0 seconds</strong></div><div class="data-row"><span>Recognition</span><strong>NHS / Academic All-Conference</strong></div></div></div><div class="profile-card honors-card">
 <h3>Academic Distinction, Leadership &amp; Service</h3>
 <p class="honors-intro">Sustained academic achievement and a multi-year record of service, character and leadership through the Young Men's Service League.</p>
@@ -423,7 +612,7 @@ body{padding-top:58px}
 Your browser does not support the video tag.
 </video>
 <div class="video-caption">Pitching – Summer 2026 (89 MPH)</div><div class="featured-subtitle">Pitching highlights • 89 MPH</div>
-</div><div class="featured-media-card" data-category="featured"><video controls="True" preload="metadata"><source src="assets/images/Pitching0.mp4" type="video/mp4"/></video><div class="video-caption">Pitching – Complete Outing</div><div class="featured-subtitle">Complete pitching outing</div></div></div></div><div class="media-library"><section class="media-row" data-category-section="pitching" id="pitching-videos"><div class="media-row-heading"><h3>Pitching</h3><p>Game outings, bullpen work and pitch metrics.</p></div><div class="media-strip"><div class="video-item media-tile" data-category="pitching">
+</div><div class="featured-media-card" data-category="featured"><video controls="True" preload="metadata"><source src="assets/images/Pitching0.mp4" type="video/mp4"/></video><div class="video-caption">Scoreless Inning – PBR 17U National Championship</div><div class="featured-subtitle">Complete pitching outing</div></div></div></div><div class="media-library"><section class="media-row" data-category-section="pitching" id="pitching-videos"><div class="media-row-heading"><h3>Pitching</h3><p>Game outings, bullpen work and pitch metrics.</p></div><div class="media-strip"><div class="video-item media-tile" data-category="pitching">
 <video controls="">
 <source src="assets/images/pitchingadhs3.mp4" type="video/mp4"/>
         Your browser does not support the video tag.
