@@ -379,25 +379,221 @@ body.coach-mode .hero-v2{min-height:58vh}
 .team-caption{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.55);color:#fff;
 padding:6px 10px;border-radius:6px;font-size:.9rem;font-weight:600;}
 
-/* Davidson commitment color translation — preserves original layout */
-:root{
-  --navy:#111111;
-  --navy-2:#2B2B2B;
-  --blue:#C8102E;
-  --blue-light:#F4F4F4;
-  --white:#FFFFFF;
-  --ink:#171717;
-  --muted:#6B6B6B;
-  --line:#D8D8D8;
+/* =========================================================
+   DAVIDSON BRAND INTEGRATION
+   Uses the existing three Davidson image files.
+   No structural HTML changes required.
+   ========================================================= */
+
+/* ---------- NAVIGATION: DC MARK ---------- */
+
+.davidson-brand-mark{
+  width:42px;
+  height:42px;
+  flex:0 0 42px;
+  display:grid;
+  place-items:center;
+  background:#C8102E !important;
+  border:2px solid rgba(255,255,255,.92);
+  border-radius:50%;
+  padding:5px;
+  overflow:hidden;
+  box-shadow:0 4px 12px rgba(0,0,0,.22);
 }
-.site-nav,.coach-sticky-bar{background:rgba(17,17,17,.97)}
-.nav-cta,.btn-primary,.brand-mark,.advisor-icon,.contact-actions a,.back-top{background:#C8102E}
-.nav-links a:hover,.event-link,.eyebrow,.section-eyebrow,.v3-section-kicker,
-.quick-group-label,.performance-kicker,.honor-item .honor-year,.season span,
-.schedule-month,.contact-card-v2 .role,.social-grid i{color:#C8102E}
-.latest-update-band{background:linear-gradient(100deg,#111111,#2B2B2B,#8F0B20);border-left:8px solid #C8102E}
-.featured-performance{background:linear-gradient(145deg,#111111,#3B0A12)}
-.honor-item.featured{background:linear-gradient(145deg,#111111,#3B0A12)}
-.contact-card-v2.primary{background:linear-gradient(145deg,#111111,#3B0A12)}
-.schedule-card.featured-result{border-left-color:#C8102E;background:#FFF9FA}
-.result-card,.high-school-schedule,.quick-group,.quick-stat,.season,.honor-item{background:#F4F4F4}
+
+.davidson-brand-mark img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:contain;
+  filter:none;
+}
+
+
+/* ---------- HERO: WILDCAT MARK ---------- */
+
+.hero-commit-line{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  flex-wrap:wrap;
+  margin-bottom:4px;
+}
+
+.hero-wildcat-logo{
+  width:70px;
+  height:70px;
+  flex:0 0 70px;
+  object-fit:contain;
+
+  /* Let the actual logo be the visual instead of
+     putting it inside a large white circle */
+  background:transparent;
+  border-radius:0;
+  padding:0;
+
+  filter:
+    drop-shadow(0 4px 4px rgba(0,0,0,.40))
+    drop-shadow(0 10px 18px rgba(0,0,0,.28));
+}
+
+
+/* Make commitment pill feel connected to Davidson branding */
+
+.hero-commit-line .status-pill{
+  background:rgba(200,16,46,.88);
+  border:1px solid rgba(255,255,255,.38);
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+  backdrop-filter:blur(6px);
+}
+
+.hero-commit-line .status-dot{
+  background:#fff;
+  box-shadow:0 0 0 4px rgba(255,255,255,.16);
+}
+
+
+/* ---------- DAVIDSON WORDMARK / COMMITMENT TRANSITION ---------- */
+
+.commitment-wordmark{
+  max-width:1180px;
+  margin:48px auto 0;
+  padding:0 24px;
+  position:relative;
+  z-index:4;
+}
+
+/*
+   This creates a polished white Davidson identity card
+   between the recruiting content and commitment announcement.
+*/
+
+.commitment-wordmark::before{
+  content:"";
+  position:absolute;
+  inset:0 24px;
+  background:#fff;
+  border-radius:22px 22px 0 0;
+  box-shadow:0 -8px 30px rgba(0,0,0,.08);
+  z-index:-1;
+}
+
+.commitment-wordmark img{
+  display:block;
+  width:min(620px,82%);
+  height:auto;
+  max-height:145px;
+  object-fit:contain;
+  margin:0 auto;
+  padding:25px 20px 20px;
+}
+
+
+/* ---------- COMMITMENT ANNOUNCEMENT ---------- */
+
+/* Connect the wordmark visually to the announcement below */
+
+.latest-update-band{
+  margin-top:0;
+  border-left:0;
+  border-top:5px solid #C8102E;
+  background:
+    linear-gradient(
+      105deg,
+      #111111 0%,
+      #1b1b1b 58%,
+      #2b2b2b 100%
+    );
+  box-shadow:0 14px 34px rgba(0,0,0,.20);
+}
+
+.latest-update-label{
+  color:#fff;
+}
+
+.latest-update-label .fa-paw{
+  color:#C8102E;
+  font-size:1rem;
+}
+
+.latest-update-badge{
+  background:#C8102E;
+  color:#fff;
+  box-shadow:0 5px 15px rgba(200,16,46,.30);
+}
+
+
+/* ---------- SUBTLE DAVIDSON ACCENTS ---------- */
+
+/* Red top rule on the commitment performance card */
+
+.featured-performance{
+  position:relative;
+  overflow:hidden;
+}
+
+.featured-performance::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:5px;
+  background:#C8102E;
+}
+
+
+/* Davidson red treatment for the primary hero CTA */
+
+.hero-actions .btn-primary{
+  background:#C8102E;
+  border-color:#C8102E;
+  box-shadow:0 7px 20px rgba(200,16,46,.25);
+}
+
+.hero-actions .btn-primary:hover{
+  background:#a80d27;
+  border-color:#a80d27;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:640px){
+
+  .davidson-brand-mark{
+    width:38px;
+    height:38px;
+    flex-basis:38px;
+  }
+
+  .hero-commit-line{
+    gap:10px;
+  }
+
+  .hero-wildcat-logo{
+    width:54px;
+    height:54px;
+    flex-basis:54px;
+  }
+
+  .hero-commit-line .status-pill{
+    font-size:.66rem;
+    letter-spacing:.08em;
+  }
+
+  .commitment-wordmark{
+    margin-top:32px;
+    padding:0 15px;
+  }
+
+  .commitment-wordmark::before{
+    inset:0 15px;
+    border-radius:17px 17px 0 0;
+  }
+
+  .commitment-wordmark img{
+    width:min(500px,92%);
+    padding:20px 14px 16px;
+  }
+}
